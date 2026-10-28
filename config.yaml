@@ -1,0 +1,37 @@
+{
+  "_comment": "Quillmint-specific check settings. JSON syntax (valid YAML) so the stdlib can parse it. Product truth stays in each record's campaign.facts / campaign.rules; this file only says how to look for claims.",
+  "automated_authors": ["ai", "template"],
+  "fact_checks": {
+    "plan_names": ["Free", "Solo", "Studio", "Agency"],
+    "not_available_prefix": "Not available:",
+    "feature_display_names": {"inventory": "Inventory management", "payroll": "Payroll", "time tracking": "Time tracking"},
+    "negation_words": ["not", "no", "never", "n't", "não", "nao", "sin"],
+    "release_date_patterns": [
+      "\\b(January|February|March|April|May|June|July|August|September|October|November|December)\\b",
+      "\\bQ[1-4]\\b",
+      "\\b(next|this) (week|month|quarter|year)\\b",
+      "\\bcoming soon\\b"
+    ],
+    "percent_off_pattern": "(\\d+)\\s*%\\s*off",
+    "discount_word_pattern": "\\bdiscount",
+    "refund_pattern": "\\brefund|\\bmoney back\\b|\\breembols",
+    "handoff_phrases": ["team", "check with", "passed", "asked", "a person", "human"],
+    "opt_out_patterns": ["unsubscribe", "stop emailing", "stop sending", "remove me", "not interested"],
+    "pitch_markers": ["?", "[LINK]", "before you go", "upgrade", "Free", "Solo", "Studio", "Agency"],
+    "evidence_keywords": {
+      "unsupported_feature": "Not available",
+      "wrong_price": "Plans:",
+      "invented_discount": "discount",
+      "release_date_claim": "release date",
+      "refund_promise": "refund",
+      "opt_out_violation": "unsubscribe|not interested"
+    }
+  },
+  "quality_checks": {
+    "max_words": {"presales_chat": 60, "partner_desk_email": 80},
+    "evasive_min_words": 40,
+    "bug_patterns": ["error", "not supported", "bug", "doesn't work", "isn't working", "broken", "crash"],
+    "upsell_patterns": ["upgrade", "Agency plan", "Studio plan", "Solo plan", "available on the Agency", "available on the Studio"],
+    "stopwords": ["about", "also", "and", "any", "are", "can", "could", "does", "for", "from", "have", "how", "into", "just", "like", "much", "need", "only", "that", "the", "their", "there", "they", "this", "what", "when", "where", "which", "will", "with", "would", "your", "you", "is", "my", "do", "we", "our", "too", "it", "in", "of", "to", "a", "an", "i", "me", "or", "on", "at", "be"]
+  }
+}

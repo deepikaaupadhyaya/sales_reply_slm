@@ -1,0 +1,1896 @@
+{
+  "schema_version": 2,
+  "project": {
+    "name": "sales_reply_check_slm",
+    "mode": "init",
+    "profile": "prototype",
+    "objective": "sales_reply_check_slm",
+    "constraints": [],
+    "non_goals": [],
+    "trust_boundary": "local repository",
+    "created_at": "2026-10-28T08:21:14.870Z",
+    "updated_at": "2026-10-28T17:57:44.347Z"
+  },
+  "policy": {
+    "ponytail": "full",
+    "autonomy": "human-in-the-loop",
+    "learned_rule_promotion": "human-required",
+    "cleanup": "propose-only",
+    "traces": {
+      "storage": "local",
+      "commit_raw": false,
+      "redact_secrets": true
+    }
+  },
+  "lifecycle": {
+    "phase": "verify",
+    "status": "ready",
+    "active_task": null,
+    "blocker": null,
+    "next_action": "Review completed work and choose the next bounded outcome."
+  },
+  "commands": {},
+  "workflow": {
+    "type": "new-product",
+    "started_at": "2026-10-28T08:21:14.876Z",
+    "spec_check": {
+      "at": "2026-10-28T09:06:39.455Z",
+      "source_hash": "43617a7b9e1302105667db34d7936914d87b3f9b962634252e044ef66d56980d",
+      "requirements": [
+        "AC-1",
+        "AC-2",
+        "AC-3",
+        "AC-4",
+        "AC-5",
+        "AC-6",
+        "AC-7",
+        "AC-8",
+        "AC-9",
+        "FR-1",
+        "FR-10",
+        "FR-11",
+        "FR-12",
+        "FR-13",
+        "FR-14",
+        "FR-2",
+        "FR-3",
+        "FR-4",
+        "FR-5",
+        "FR-6",
+        "FR-7",
+        "FR-8",
+        "FR-9",
+        "NFR-1",
+        "NFR-2",
+        "NFR-3",
+        "NFR-4",
+        "NFR-5",
+        "NFR-6"
+      ]
+    },
+    "plan_check": {
+      "at": "2026-10-28T17:42:24.784Z",
+      "source_hash": "45bc6c1a64015bed03eccb7035fc8c0db3652d5effaa131570e6ebe21e2b91f5"
+    },
+    "plan_approval": {
+      "human": "Deepika",
+      "reason": "yes please start the task since we have updated the csv we need to do it again",
+      "at": "2026-10-28T17:42:25.225Z",
+      "source_hash": "45bc6c1a64015bed03eccb7035fc8c0db3652d5effaa131570e6ebe21e2b91f5"
+    }
+  },
+  "artifacts": [
+    {
+      "id": "SPEC-1",
+      "type": "specification",
+      "path": "SPEC.md",
+      "status": "approved",
+      "requirements": [
+        "AC-1",
+        "AC-2",
+        "AC-3",
+        "AC-4",
+        "AC-5",
+        "AC-6",
+        "AC-7",
+        "AC-8",
+        "AC-9",
+        "FR-1",
+        "FR-10",
+        "FR-11",
+        "FR-12",
+        "FR-13",
+        "FR-14",
+        "FR-2",
+        "FR-3",
+        "FR-4",
+        "FR-5",
+        "FR-6",
+        "FR-7",
+        "FR-8",
+        "FR-9",
+        "NFR-1",
+        "NFR-2",
+        "NFR-3",
+        "NFR-4",
+        "NFR-5",
+        "NFR-6"
+      ],
+      "source_hash": "43617a7b9e1302105667db34d7936914d87b3f9b962634252e044ef66d56980d",
+      "approval": {
+        "human": "Deepika",
+        "reason": "pipeline stages match the ADR",
+        "at": "2026-10-28T09:06:39.564Z",
+        "source_hash": "43617a7b9e1302105667db34d7936914d87b3f9b962634252e044ef66d56980d"
+      }
+    }
+  ],
+  "assumptions": [
+    {
+      "id": "ASSUMPTION-d5ad88f8",
+      "text": "Default v1 input is showcase/candidates-readable.json; candidates.jsonl and manifest.json mentioned in the showcase README are not present in the repo yet.",
+      "status": "open",
+      "source": "showcase/README.md",
+      "recorded_at": "2026-10-28T08:23:43.418Z",
+      "paths": [],
+      "tags": []
+    },
+    {
+      "id": "ASSUMPTION-a340df18",
+      "text": "Human review in this release is file-based JSONL, not a web or interactive labeling UI.",
+      "status": "superseded",
+      "source": null,
+      "recorded_at": "2026-10-28T08:23:43.529Z",
+      "paths": [],
+      "tags": [],
+      "superseded_by": "ASSUMPTION-7560f7a8"
+    },
+    {
+      "id": "ASSUMPTION-4029b45b",
+      "text": "Python 3.11+ stdlib unittest is acceptable if pytest is not already a project dependency; no test framework will be added unless requested.",
+      "status": "open",
+      "source": null,
+      "recorded_at": "2026-10-28T08:23:43.653Z",
+      "paths": [],
+      "tags": []
+    },
+    {
+      "id": "ASSUMPTION-7560f7a8",
+      "text": "Human review in this release is a CSV file (data/review/review_queue.csv), not JSONL editing and not a UI.",
+      "status": "open",
+      "source": "user: export csv for me to review; plan approval confirmed 2026-10-28",
+      "recorded_at": "2026-10-28T09:28:52.348Z",
+      "paths": [],
+      "tags": [],
+      "supersedes": "ASSUMPTION-a340df18"
+    }
+  ],
+  "invariants": [
+    {
+      "id": "INVARIANT-737fb308",
+      "text": "Original source dataset files must remain unmodified after every pipeline run.",
+      "source": "adr/adr01_pipeline_decision.md",
+      "recorded_at": "2026-10-28T08:23:43.768Z",
+      "paths": [],
+      "tags": []
+    },
+    {
+      "id": "INVARIANT-1c09cbe7",
+      "text": "Campaign facts and campaign rules are the only sources of product truth for automated fact and policy checks.",
+      "source": "showcase/README.md",
+      "recorded_at": "2026-10-28T08:23:43.883Z",
+      "paths": [],
+      "tags": []
+    }
+  ],
+  "decisions": [
+    {
+      "id": "DECISION-bd7b933d",
+      "title": "One Genesis task per pipeline stage",
+      "text": "Implementation work is split so each of the ten pipeline stages is its own bounded Genesis task with its own module, tests, file scope, dependencies, and executable gate. Orchestrator and export gates come after the stage modules exist. Do not collapse stages into a single implement-everything task.",
+      "status": "accepted",
+      "source": "adr/adr01_pipeline_decision.md",
+      "recorded_at": "2026-10-28T08:23:43.101Z",
+      "paths": [],
+      "tags": []
+    },
+    {
+      "id": "DECISION-76c6b9fc",
+      "title": "Separate generic cleaning from Quillmint rules",
+      "text": "JSON parsing, schema, normalization, and ID checks stay generic. Quillmint product facts and sales policies stay in configuration, not hard-coded stage branches.",
+      "status": "accepted",
+      "source": "adr/adr01_pipeline_decision.md",
+      "recorded_at": "2026-10-28T08:23:43.207Z",
+      "paths": [],
+      "tags": []
+    },
+    {
+      "id": "DECISION-6885a9ca",
+      "title": "No auto-delete of suspected duplicates or truncated history",
+      "text": "Potential duplicates are reported, not deleted without documented handling. Truncated history is flagged and kept unless another rule excludes the record.",
+      "status": "accepted",
+      "source": "adr/adr01_pipeline_decision.md",
+      "recorded_at": "2026-10-28T08:23:43.311Z",
+      "paths": [],
+      "tags": []
+    },
+    {
+      "id": "DECISION-7d40c913",
+      "title": "Stop at human review CSV",
+      "text": "Deepika approved the spec with an added halt: after quality flags, export data/review/review_queue.csv and wait. Do not write 08_reviewed_golden.jsonl, split-validated files, or golden exports until the reviewed CSV is returned.",
+      "status": "accepted",
+      "source": "user: approve spec as Deepika; stop at human review and export csv",
+      "recorded_at": "2026-10-28T09:06:39.212Z",
+      "paths": [],
+      "tags": []
+    },
+    {
+      "id": "DECISION-4fa10265",
+      "title": "Review artifact is CSV",
+      "text": "Human review in this slice is a CSV file for Deepika, not JSONL editing and not a UI.",
+      "status": "accepted",
+      "source": "user: export csv for me to review",
+      "recorded_at": "2026-10-28T09:06:39.340Z",
+      "paths": [],
+      "tags": []
+    },
+    {
+      "id": "DECISION-46a63527",
+      "title": "config.yaml uses JSON syntax",
+      "text": "config.yaml holds Quillmint check settings (fact_checks and quality_checks) written in JSON syntax, a YAML subset, so stdlib json parses it without adding PyYAML (NFR-3). Product truth still comes only from each record's campaign.facts/rules. Quality keys live here too because config.yaml is only in T-FACT file scope.",
+      "status": "accepted",
+      "source": "NFR-3, FR-13, T-FACT scope",
+      "recorded_at": "2026-10-28T09:34:13.668Z",
+      "paths": [],
+      "tags": []
+    },
+    {
+      "id": "DECISION-8dc74b33",
+      "title": "Follow-up improvements deferred",
+      "text": "Deepika stopped the follow-up work on 2026-10-28 and asked to keep it as future improvements. T-HANDOFF-LANG and T-RESPLIT stay queued in an unapproved, reopened plan; the plan was NOT re-approved. Also deferred: confirming two needs_review claims with the Quillmint team, and reconsidering dec_70f0665919f2 (partner rule: answer only from Partner Facts). Details in FUTURE_IMPROVEMENTS.md. Open question for re-split: validation should cover each error type, but irrelevant and duplicate have one example each (train).",
+      "status": "accepted",
+      "source": "user: let's leave it here, save as future improvement",
+      "recorded_at": "2026-10-28T17:37:05.139Z",
+      "paths": [],
+      "tags": []
+    },
+    {
+      "id": "DECISION-bf0a6db7",
+      "title": "dec_70f0665919f2 relabelled policy_violation",
+      "text": "Deepika chose option 2: dec_70f0665919f2 (partner commission reply quoting Studio $27) is policy_violation, not correct, because partner rule 2 says answer only from the Partner Facts, which list no plan prices. Correction: '20% of each referred client's paid subscription, every month for their first 12 months.' Applied to data/review/review_queue_reviewed.csv (Desktop original unchanged); merge, split and export re-run; 34 tests pass. Golden counts unchanged at 80; train now 53 correct / 3 policy_violation.",
+      "status": "accepted",
+      "source": "user: yes go with option 2 (2026-10-28)",
+      "recorded_at": "2026-10-28T17:40:53.482Z",
+      "paths": [],
+      "tags": []
+    }
+  ],
+  "knowledge": [
+    {
+      "id": "KNOWLEDGE-771ab205",
+      "title": "Pipeline ADR is the source architecture",
+      "text": "adr/adr01_pipeline_decision.md defines a 10-stage modular cleaning pipeline from raw sales-reply JSON/JSONL to golden train/validation/test exports. Clean data is not golden data. Golden records must be structurally valid, factually grounded, contextually correct, policy-compliant, and reviewed.",
+      "source": "adr/adr01_pipeline_decision.md",
+      "tags": [
+        "FR-1",
+        "FR-10"
+      ],
+      "recorded_at": "2026-10-28T08:23:42.885Z",
+      "paths": [
+        "adr/adr01_pipeline_decision.md"
+      ]
+    },
+    {
+      "id": "KNOWLEDGE-6be4d0f4",
+      "title": "Showcase dataset schema and planted errors",
+      "text": "showcase/README.md and showcase/candidates-readable.json define a fully synthetic Quillmint sales-reply dataset: 81 records, 28 threads, 26 prospects, thread-level splits (train 64, validation 8, test 9). Campaign facts and rules are the only allowed product truth. Ten unlabeled planted mistakes exist for labelers.",
+      "source": "showcase/README.md",
+      "tags": [
+        "FR-2",
+        "FR-6"
+      ],
+      "recorded_at": "2026-10-28T08:23:42.998Z",
+      "paths": [
+        "showcase/README.md"
+      ]
+    },
+    {
+      "id": "KNOWLEDGE-5d875bee",
+      "title": "Review CSV exported; T-SPLIT paused for Deepika",
+      "text": "On 2026-10-28 PYTHONPATH=src python3 -m pipeline.pipeline wrote data/review/review_queue.csv (82 rows: 6 factual_error, 4 policy_violation, 1 duplicate, 3 needs_review, 68 correct) and reports/metrics.json. T-SPLIT and T-EXPORT must not start until Deepika returns the CSV with reviewer_label/reviewer_correction/reviewer_rationale filled. Note: reports/metrics.json was written while T-SPLIT was active and reports/ is outside T-SPLIT scope; check scope before completing T-SPLIT.",
+      "source": "pipeline run 2026-10-28; DECISION-7d40c913",
+      "tags": [],
+      "recorded_at": "2026-10-28T09:57:46.785Z",
+      "paths": []
+    },
+    {
+      "id": "KNOWLEDGE-63836773",
+      "title": "Validation split has no error examples",
+      "text": "After Deepika's review, golden_validation.jsonl has 8 records, all labeled correct; the source thread split placed no planted mistakes in validation. Validation cannot measure error detection. Fixing it means a thread-level re-split, which changes FR-9 and needs spec approval.",
+      "source": "reports/quality_report.json 2026-10-28",
+      "tags": [],
+      "recorded_at": "2026-10-28T17:30:32.345Z",
+      "paths": []
+    }
+  ],
+  "tasks": [
+    {
+      "id": "SPEC-1",
+      "outcome": "Produce an approved, implementation-ready product specification",
+      "state": "done",
+      "risk": "medium",
+      "owner": null,
+      "scope": [
+        "SPEC.md"
+      ],
+      "dependencies": [],
+      "requirements": [],
+      "gates": [
+        {
+          "id": "independent-review",
+          "command": "",
+          "mandatory": true,
+          "status": "pass",
+          "evidence": {
+            "human": "Deepika",
+            "reason": "pipeline stages match the ADR",
+            "source_hash": "b49ac54a0c5320b9123831dbf146aa69273564cdd6d1f5f9ff01abe3a976d71e",
+            "observed_at": "2026-10-28T09:06:39.564Z"
+          },
+          "kind": "review"
+        }
+      ],
+      "next_action": "Interview the human, record durable context, and replace every placeholder in SPEC.md.",
+      "blocker": null,
+      "notes": [],
+      "failures": [],
+      "limitations": [],
+      "created_at": "2026-10-28T08:21:14.876Z",
+      "updated_at": "2026-10-28T09:06:39.564Z"
+    },
+    {
+      "id": "T-INGEST",
+      "outcome": "Ingest showcase JSON into a raw snapshot with source checksums; merge the inventory synthetic fixture; leave source files unchanged.",
+      "state": "done",
+      "risk": "low",
+      "owner": null,
+      "scope": [
+        "src/pipeline",
+        "tests",
+        "data/raw"
+      ],
+      "dependencies": [],
+      "requirements": [
+        "FR-1",
+        "FR-12",
+        "NFR-1",
+        "NFR-3",
+        "AC-1"
+      ],
+      "inputs": [],
+      "environment": [],
+      "scenarios": [
+        {
+          "id": "ingest-source",
+          "actor": "ml-engineer",
+          "scope": "showcase/candidates-readable.json",
+          "environment": "test",
+          "duration": "one ingest",
+          "observable": "data/raw/01_raw_snapshot.jsonl exists with checksum metadata and showcase source bytes unchanged",
+          "gate": "tests"
+        }
+      ],
+      "gates": [
+        {
+          "id": "tests",
+          "kind": "command",
+          "command": "python3 -m unittest tests.test_ingestion",
+          "mandatory": true,
+          "status": "pass",
+          "evidence": {
+            "path": ".genesis/evidence/T-INGEST-tests-ffcb3198-123f-414f-8c85-e4de7ad24fd3.json",
+            "hash": "e4f11899ccebda9475a28abbd825fb68c54f973039e7c029405186a2c16ed961",
+            "source_hash": "797d2043ed8e3fbb155ff8ccc5e8228a2b873f8bf90e335c1e8b764fb2e9023c",
+            "config_hash": "81cb84cd4c08a9862756c34b5a00dbd85b7af071c848d0a224b0680dc4a665cd",
+            "observed_at": "2026-10-28T09:27:52.859Z"
+          }
+        }
+      ],
+      "next_action": "Run the task pre-flight.",
+      "blocker": null,
+      "notes": [],
+      "failures": [],
+      "limitations": [],
+      "created_at": "2026-10-28T09:07:36.776Z",
+      "updated_at": "2026-10-28T09:27:53.164Z",
+      "base_manifest": {
+        "AGENTS.md": "a67615d8ed1ed3dd1b0d2cbf874ceb8d4a285c3335cdfc2d785ec80a06daecc1",
+        "CLAUDE.md": "a67615d8ed1ed3dd1b0d2cbf874ceb8d4a285c3335cdfc2d785ec80a06daecc1",
+        "SPEC.md": "cce1802190981dba461de7b37a37e09d4f0b24e13b7dbdfb0465ae49edf1b968",
+        "adr/adr01_pipeline_decision.md": "6481465f6d7913b6e467aedbd46a2e6909799c38642ea9e6105859f7c0188a6d",
+        "showcase/README.md": "cd5171a80cfe977dc439bac50c17af915ba0a316d8d8f1dd5e77aa26d70264f7",
+        "showcase/candidates-readable.json": "759729555dc5294ddb89b2bb3563e75a9a74f173c2aab010e1466328dcdc450a"
+      }
+    },
+    {
+      "id": "T-SCHEMA",
+      "outcome": "Validate schema; split valid and invalid records with explicit error reasons.",
+      "state": "done",
+      "risk": "low",
+      "owner": null,
+      "scope": [
+        "src/pipeline",
+        "tests",
+        "data"
+      ],
+      "dependencies": [
+        "T-INGEST"
+      ],
+      "requirements": [
+        "FR-2",
+        "NFR-4",
+        "AC-2"
+      ],
+      "inputs": [],
+      "environment": [],
+      "scenarios": [
+        {
+          "id": "schema-split",
+          "actor": "ml-engineer",
+          "scope": "01_raw_snapshot.jsonl",
+          "environment": "test",
+          "duration": "one schema pass",
+          "observable": "invalid records only in 02_schema_errors.jsonl each with a reason; valid records only in 02_schema_valid.jsonl",
+          "gate": "tests"
+        }
+      ],
+      "gates": [
+        {
+          "id": "tests",
+          "kind": "command",
+          "command": "python3 -m unittest tests.test_schema_validation",
+          "mandatory": true,
+          "status": "pass",
+          "evidence": {
+            "path": ".genesis/evidence/T-SCHEMA-tests-432aeace-1c05-40f1-a9b5-4b8f7dca0881.json",
+            "hash": "c44b7280dcaeeab6bf72fce6e278b8b3dd39ef3f3d8a8bc304fc1fffd623c9f1",
+            "source_hash": "08b0bd15de259d66caec031f91eba347f5f82860f42da052cb89e71bc8ec5298",
+            "config_hash": "2284e9110db4f4c5ec6b507508ef95a575014b217f528e841d3c6c8cb1c02aac",
+            "observed_at": "2026-10-28T09:31:01.746Z"
+          }
+        }
+      ],
+      "next_action": "Run the task pre-flight.",
+      "blocker": null,
+      "notes": [],
+      "failures": [],
+      "limitations": [],
+      "created_at": "2026-10-28T09:07:36.910Z",
+      "updated_at": "2026-10-28T09:31:02.030Z",
+      "base_manifest": {
+        "AGENTS.md": "a67615d8ed1ed3dd1b0d2cbf874ceb8d4a285c3335cdfc2d785ec80a06daecc1",
+        "CLAUDE.md": "a67615d8ed1ed3dd1b0d2cbf874ceb8d4a285c3335cdfc2d785ec80a06daecc1",
+        "SPEC.md": "cce1802190981dba461de7b37a37e09d4f0b24e13b7dbdfb0465ae49edf1b968",
+        "adr/adr01_pipeline_decision.md": "6481465f6d7913b6e467aedbd46a2e6909799c38642ea9e6105859f7c0188a6d",
+        "showcase/README.md": "cd5171a80cfe977dc439bac50c17af915ba0a316d8d8f1dd5e77aa26d70264f7",
+        "showcase/candidates-readable.json": "759729555dc5294ddb89b2bb3563e75a9a74f173c2aab010e1466328dcdc450a",
+        "src/pipeline/__init__.py": "23aade605c535e0d982fe491bea52673dc8edd4fdf1d540b43420385ceab3b94",
+        "src/pipeline/ingestion.py": "2d358bf8b4df0011ec728a4a52767f9b2afb91b0d25a3be30ab8eb112ab0ddcf",
+        "src/pipeline/inventory_fixture.py": "9cad62ba04b0b752f9bc77af7cef0395e29b04f8b9268ffe4079edac24dac48e",
+        "src/pipeline/io.py": "cddf6f7be31e2f5d65d5eca68bda5a05cc5722d0d0f0874092154787f11638a0",
+        "tests/__init__.py": "78fb5f112b9e331e6d45cc7ba20c364344137c40dce44296fbdbe7854ba5bea2",
+        "tests/test_ingestion.py": "7c440c3f787ada725730c999b60b38413d8ec74645142cf6396edc342f99dd79"
+      }
+    },
+    {
+      "id": "T-NORMALIZE",
+      "outcome": "Normalize whitespace and missing values without rewriting message bodies.",
+      "state": "done",
+      "risk": "low",
+      "owner": null,
+      "scope": [
+        "src/pipeline",
+        "tests",
+        "data"
+      ],
+      "dependencies": [
+        "T-SCHEMA"
+      ],
+      "requirements": [
+        "FR-3"
+      ],
+      "inputs": [],
+      "environment": [],
+      "scenarios": [
+        {
+          "id": "normalize-preserve",
+          "actor": "ml-engineer",
+          "scope": "02_schema_valid.jsonl",
+          "environment": "test",
+          "duration": "one normalize pass",
+          "observable": "03_normalized.jsonl has trimmed fields and unchanged response and history text meaning",
+          "gate": "tests"
+        }
+      ],
+      "gates": [
+        {
+          "id": "tests",
+          "kind": "command",
+          "command": "python3 -m unittest tests.test_normalization",
+          "mandatory": true,
+          "status": "pass",
+          "evidence": {
+            "path": ".genesis/evidence/T-NORMALIZE-tests-a5fa59f0-b850-424d-8f7b-77eb4b3fb684.json",
+            "hash": "1c148b44d4671a0d64534cb1891fd79513a29d065e606834b3804e82ac155660",
+            "source_hash": "6536647900124e3a1ce73dd8411080a3b8f5d8d4c81b725a3c95914a9056cc42",
+            "config_hash": "af1d6f908abb3fad10a783f69a7a90180e6f324459974c2ca323027aec42dbbd",
+            "observed_at": "2026-10-28T09:31:25.066Z"
+          }
+        }
+      ],
+      "next_action": "Run the task pre-flight.",
+      "blocker": null,
+      "notes": [],
+      "failures": [],
+      "limitations": [],
+      "created_at": "2026-10-28T09:07:37.042Z",
+      "updated_at": "2026-10-28T09:31:25.362Z",
+      "base_manifest": {
+        "AGENTS.md": "a67615d8ed1ed3dd1b0d2cbf874ceb8d4a285c3335cdfc2d785ec80a06daecc1",
+        "CLAUDE.md": "a67615d8ed1ed3dd1b0d2cbf874ceb8d4a285c3335cdfc2d785ec80a06daecc1",
+        "SPEC.md": "cce1802190981dba461de7b37a37e09d4f0b24e13b7dbdfb0465ae49edf1b968",
+        "adr/adr01_pipeline_decision.md": "6481465f6d7913b6e467aedbd46a2e6909799c38642ea9e6105859f7c0188a6d",
+        "showcase/README.md": "cd5171a80cfe977dc439bac50c17af915ba0a316d8d8f1dd5e77aa26d70264f7",
+        "showcase/candidates-readable.json": "759729555dc5294ddb89b2bb3563e75a9a74f173c2aab010e1466328dcdc450a",
+        "src/pipeline/__init__.py": "23aade605c535e0d982fe491bea52673dc8edd4fdf1d540b43420385ceab3b94",
+        "src/pipeline/ingestion.py": "2d358bf8b4df0011ec728a4a52767f9b2afb91b0d25a3be30ab8eb112ab0ddcf",
+        "src/pipeline/inventory_fixture.py": "9cad62ba04b0b752f9bc77af7cef0395e29b04f8b9268ffe4079edac24dac48e",
+        "src/pipeline/io.py": "cd116b0fa2940cda9dfaa09ac3017e84a5ce39493c5463a5eaab407ed2ff875f",
+        "src/pipeline/schema_validation.py": "e346d0ac80d555cd702d968e0feb0de394741166603c42e0cefc0b755049e1dd",
+        "tests/__init__.py": "78fb5f112b9e331e6d45cc7ba20c364344137c40dce44296fbdbe7854ba5bea2",
+        "tests/test_ingestion.py": "7c440c3f787ada725730c999b60b38413d8ec74645142cf6396edc342f99dd79",
+        "tests/test_schema_validation.py": "8ae9282e4f26ef67116e0f8e8dc585e872cb7dbd98a677babad39e4413c6047e"
+      }
+    },
+    {
+      "id": "T-DEDUP",
+      "outcome": "Detect ID conflicts and duplicates; report potential duplicates without deleting them.",
+      "state": "done",
+      "risk": "low",
+      "owner": null,
+      "scope": [
+        "src/pipeline",
+        "tests",
+        "data"
+      ],
+      "dependencies": [
+        "T-NORMALIZE"
+      ],
+      "requirements": [
+        "FR-4",
+        "AC-7"
+      ],
+      "inputs": [],
+      "environment": [],
+      "scenarios": [
+        {
+          "id": "dedup-report",
+          "actor": "ml-engineer",
+          "scope": "03_normalized.jsonl",
+          "environment": "test",
+          "duration": "one dedup pass",
+          "observable": "04_duplicate_report.jsonl lists potential duplicates; those records remain in 04_deduplicated.jsonl",
+          "gate": "tests"
+        }
+      ],
+      "gates": [
+        {
+          "id": "tests",
+          "kind": "command",
+          "command": "python3 -m unittest tests.test_deduplication",
+          "mandatory": true,
+          "status": "pass",
+          "evidence": {
+            "path": ".genesis/evidence/T-DEDUP-tests-a9212273-1ed0-4cde-87e1-8c42386e6d36.json",
+            "hash": "9bbd8bf5a2dd2a8916df8c06d0502dcf911f246d5403676112d94a8ac72478bf",
+            "source_hash": "6332a393174bb72da39b26d4f019ab9919127f7cc3948a7682f45f493420185c",
+            "config_hash": "b803d76721ef3700e740f51f8979b24db619c7334a3059505f8bf5915a8e9c01",
+            "observed_at": "2026-10-28T09:31:53.222Z"
+          }
+        }
+      ],
+      "next_action": "Run the task pre-flight.",
+      "blocker": null,
+      "notes": [],
+      "failures": [],
+      "limitations": [],
+      "created_at": "2026-10-28T09:07:37.176Z",
+      "updated_at": "2026-10-28T09:31:53.599Z",
+      "base_manifest": {
+        "AGENTS.md": "a67615d8ed1ed3dd1b0d2cbf874ceb8d4a285c3335cdfc2d785ec80a06daecc1",
+        "CLAUDE.md": "a67615d8ed1ed3dd1b0d2cbf874ceb8d4a285c3335cdfc2d785ec80a06daecc1",
+        "SPEC.md": "cce1802190981dba461de7b37a37e09d4f0b24e13b7dbdfb0465ae49edf1b968",
+        "adr/adr01_pipeline_decision.md": "6481465f6d7913b6e467aedbd46a2e6909799c38642ea9e6105859f7c0188a6d",
+        "showcase/README.md": "cd5171a80cfe977dc439bac50c17af915ba0a316d8d8f1dd5e77aa26d70264f7",
+        "showcase/candidates-readable.json": "759729555dc5294ddb89b2bb3563e75a9a74f173c2aab010e1466328dcdc450a",
+        "src/pipeline/__init__.py": "23aade605c535e0d982fe491bea52673dc8edd4fdf1d540b43420385ceab3b94",
+        "src/pipeline/ingestion.py": "2d358bf8b4df0011ec728a4a52767f9b2afb91b0d25a3be30ab8eb112ab0ddcf",
+        "src/pipeline/inventory_fixture.py": "9cad62ba04b0b752f9bc77af7cef0395e29b04f8b9268ffe4079edac24dac48e",
+        "src/pipeline/io.py": "cd116b0fa2940cda9dfaa09ac3017e84a5ce39493c5463a5eaab407ed2ff875f",
+        "src/pipeline/normalization.py": "8b2712269d1e7682f810ff5d0d1326e65d55fb121ea4031b90d6e4e47ed56b8b",
+        "src/pipeline/schema_validation.py": "e346d0ac80d555cd702d968e0feb0de394741166603c42e0cefc0b755049e1dd",
+        "tests/__init__.py": "78fb5f112b9e331e6d45cc7ba20c364344137c40dce44296fbdbe7854ba5bea2",
+        "tests/test_ingestion.py": "7c440c3f787ada725730c999b60b38413d8ec74645142cf6396edc342f99dd79",
+        "tests/test_normalization.py": "bdfb8bea57d38708414ebad396c3bd29ce76a8d8ad1be6515a5ed3ca7a8da59d",
+        "tests/test_schema_validation.py": "8ae9282e4f26ef67116e0f8e8dc585e872cb7dbd98a677babad39e4413c6047e"
+      }
+    },
+    {
+      "id": "T-CONTEXT",
+      "outcome": "Validate conversation context; keep truncated-history records with a documented limitation.",
+      "state": "done",
+      "risk": "low",
+      "owner": null,
+      "scope": [
+        "src/pipeline",
+        "tests",
+        "data"
+      ],
+      "dependencies": [
+        "T-DEDUP"
+      ],
+      "requirements": [
+        "FR-5",
+        "AC-8"
+      ],
+      "inputs": [],
+      "environment": [],
+      "scenarios": [
+        {
+          "id": "keep-truncated",
+          "actor": "ml-engineer",
+          "scope": "04_deduplicated.jsonl",
+          "environment": "test",
+          "duration": "one context pass",
+          "observable": "truncated-history records remain in 05_context_validated.jsonl with a limitation flag",
+          "gate": "tests"
+        }
+      ],
+      "gates": [
+        {
+          "id": "tests",
+          "kind": "command",
+          "command": "python3 -m unittest tests.test_context_validation",
+          "mandatory": true,
+          "status": "pass",
+          "evidence": {
+            "path": ".genesis/evidence/T-CONTEXT-tests-0153f731-f5a7-4a54-b9e9-11213f9a66ac.json",
+            "hash": "c02dea15f56799d2e2fdc1b22ee638041d20e891b9ea96f879f6979ebaaafa01",
+            "source_hash": "6c3f8fdb851720a250c961165eb331657e749ed6052b9f019aa3724930975261",
+            "config_hash": "c3965cfc02a43477c64cff9e7c6f1f5b80cea118e9b5b19d44ebb00cbfae1c36",
+            "observed_at": "2026-10-28T09:32:19.155Z"
+          }
+        }
+      ],
+      "next_action": "Run the task pre-flight.",
+      "blocker": null,
+      "notes": [],
+      "failures": [],
+      "limitations": [],
+      "created_at": "2026-10-28T09:07:37.306Z",
+      "updated_at": "2026-10-28T09:32:19.519Z",
+      "base_manifest": {
+        "AGENTS.md": "a67615d8ed1ed3dd1b0d2cbf874ceb8d4a285c3335cdfc2d785ec80a06daecc1",
+        "CLAUDE.md": "a67615d8ed1ed3dd1b0d2cbf874ceb8d4a285c3335cdfc2d785ec80a06daecc1",
+        "SPEC.md": "cce1802190981dba461de7b37a37e09d4f0b24e13b7dbdfb0465ae49edf1b968",
+        "adr/adr01_pipeline_decision.md": "6481465f6d7913b6e467aedbd46a2e6909799c38642ea9e6105859f7c0188a6d",
+        "showcase/README.md": "cd5171a80cfe977dc439bac50c17af915ba0a316d8d8f1dd5e77aa26d70264f7",
+        "showcase/candidates-readable.json": "759729555dc5294ddb89b2bb3563e75a9a74f173c2aab010e1466328dcdc450a",
+        "src/pipeline/__init__.py": "23aade605c535e0d982fe491bea52673dc8edd4fdf1d540b43420385ceab3b94",
+        "src/pipeline/deduplication.py": "f7aa11387c96554474c06b813057e1f4f42db7bc0d81b2de335e4fa602f95772",
+        "src/pipeline/ingestion.py": "2d358bf8b4df0011ec728a4a52767f9b2afb91b0d25a3be30ab8eb112ab0ddcf",
+        "src/pipeline/inventory_fixture.py": "9cad62ba04b0b752f9bc77af7cef0395e29b04f8b9268ffe4079edac24dac48e",
+        "src/pipeline/io.py": "cd116b0fa2940cda9dfaa09ac3017e84a5ce39493c5463a5eaab407ed2ff875f",
+        "src/pipeline/normalization.py": "8b2712269d1e7682f810ff5d0d1326e65d55fb121ea4031b90d6e4e47ed56b8b",
+        "src/pipeline/schema_validation.py": "e346d0ac80d555cd702d968e0feb0de394741166603c42e0cefc0b755049e1dd",
+        "tests/__init__.py": "78fb5f112b9e331e6d45cc7ba20c364344137c40dce44296fbdbe7854ba5bea2",
+        "tests/test_deduplication.py": "f4a0cffe6199d814216dab4664c2eeaf846584d6abd00d44d55d7088d2689c1c",
+        "tests/test_ingestion.py": "7c440c3f787ada725730c999b60b38413d8ec74645142cf6396edc342f99dd79",
+        "tests/test_normalization.py": "bdfb8bea57d38708414ebad396c3bd29ce76a8d8ad1be6515a5ed3ca7a8da59d",
+        "tests/test_schema_validation.py": "8ae9282e4f26ef67116e0f8e8dc585e872cb7dbd98a677babad39e4413c6047e"
+      }
+    },
+    {
+      "id": "T-FACT",
+      "outcome": "Flag fact and policy violations from campaign facts and rules in config; do not invent claims.",
+      "state": "done",
+      "risk": "medium",
+      "owner": null,
+      "scope": [
+        "src/pipeline",
+        "tests",
+        "config.yaml",
+        "data"
+      ],
+      "dependencies": [
+        "T-CONTEXT"
+      ],
+      "requirements": [
+        "FR-6",
+        "FR-13",
+        "NFR-5",
+        "AC-3"
+      ],
+      "inputs": [],
+      "environment": [],
+      "scenarios": [
+        {
+          "id": "inventory-flag",
+          "actor": "ml-engineer",
+          "scope": "inventory fixture reply",
+          "environment": "test",
+          "duration": "one fact pass",
+          "observable": "inventory fixture is flagged as unsupported feature against campaign facts",
+          "gate": "tests"
+        }
+      ],
+      "gates": [
+        {
+          "id": "tests",
+          "kind": "command",
+          "command": "python3 -m unittest tests.test_fact_validation",
+          "mandatory": true,
+          "status": "pass",
+          "evidence": {
+            "path": ".genesis/evidence/T-FACT-tests-46a943bb-27ef-471a-a337-a7875e0d72e3.json",
+            "hash": "cfbf5dedaeadcbae6d12c76caf0f9a01721327e2d18393eb5d61f094661aaa23",
+            "source_hash": "df923cbd36f45845fc32a7e1e7e1e482977b3175df6b131af40df89d0d940bab",
+            "config_hash": "e9708a55f9ab311f70c85422b0d73b7a2a667ee4c45ca178f4e52d3083e6c9fc",
+            "observed_at": "2026-10-28T09:40:37.745Z"
+          }
+        },
+        {
+          "id": "independent-review",
+          "kind": "review",
+          "command": "",
+          "mandatory": true,
+          "status": "pass",
+          "evidence": {
+            "path": ".genesis/evidence/T-FACT-independent-review-b763f236-a5a0-4072-8e33-681feb839994.json",
+            "hash": "3b94a2177b0bda89699a5bf60e03e505d918e886ba90423023e62cd7d39e43a2",
+            "source_hash": "df923cbd36f45845fc32a7e1e7e1e482977b3175df6b131af40df89d0d940bab",
+            "config_hash": "e9708a55f9ab311f70c85422b0d73b7a2a667ee4c45ca178f4e52d3083e6c9fc",
+            "observed_at": "2026-10-28T09:41:32.823Z"
+          }
+        }
+      ],
+      "next_action": "Run the task pre-flight.",
+      "blocker": null,
+      "notes": [],
+      "failures": [],
+      "limitations": [],
+      "created_at": "2026-10-28T09:07:37.432Z",
+      "updated_at": "2026-10-28T09:41:33.266Z",
+      "base_manifest": {
+        "AGENTS.md": "a67615d8ed1ed3dd1b0d2cbf874ceb8d4a285c3335cdfc2d785ec80a06daecc1",
+        "CLAUDE.md": "a67615d8ed1ed3dd1b0d2cbf874ceb8d4a285c3335cdfc2d785ec80a06daecc1",
+        "SPEC.md": "cce1802190981dba461de7b37a37e09d4f0b24e13b7dbdfb0465ae49edf1b968",
+        "adr/adr01_pipeline_decision.md": "6481465f6d7913b6e467aedbd46a2e6909799c38642ea9e6105859f7c0188a6d",
+        "showcase/README.md": "cd5171a80cfe977dc439bac50c17af915ba0a316d8d8f1dd5e77aa26d70264f7",
+        "showcase/candidates-readable.json": "759729555dc5294ddb89b2bb3563e75a9a74f173c2aab010e1466328dcdc450a",
+        "src/pipeline/__init__.py": "23aade605c535e0d982fe491bea52673dc8edd4fdf1d540b43420385ceab3b94",
+        "src/pipeline/context_validation.py": "a8407fdc767218060d0ceea233ed69065c5661e16e520a16f7d02eaf85858870",
+        "src/pipeline/deduplication.py": "f7aa11387c96554474c06b813057e1f4f42db7bc0d81b2de335e4fa602f95772",
+        "src/pipeline/ingestion.py": "2d358bf8b4df0011ec728a4a52767f9b2afb91b0d25a3be30ab8eb112ab0ddcf",
+        "src/pipeline/inventory_fixture.py": "9cad62ba04b0b752f9bc77af7cef0395e29b04f8b9268ffe4079edac24dac48e",
+        "src/pipeline/io.py": "cd116b0fa2940cda9dfaa09ac3017e84a5ce39493c5463a5eaab407ed2ff875f",
+        "src/pipeline/normalization.py": "8b2712269d1e7682f810ff5d0d1326e65d55fb121ea4031b90d6e4e47ed56b8b",
+        "src/pipeline/schema_validation.py": "e346d0ac80d555cd702d968e0feb0de394741166603c42e0cefc0b755049e1dd",
+        "tests/__init__.py": "78fb5f112b9e331e6d45cc7ba20c364344137c40dce44296fbdbe7854ba5bea2",
+        "tests/test_context_validation.py": "eb6e1b07f95938bcb2bf0e70818382011d606c8f407a636c3da46aa959a00e27",
+        "tests/test_deduplication.py": "f4a0cffe6199d814216dab4664c2eeaf846584d6abd00d44d55d7088d2689c1c",
+        "tests/test_ingestion.py": "7c440c3f787ada725730c999b60b38413d8ec74645142cf6396edc342f99dd79",
+        "tests/test_normalization.py": "bdfb8bea57d38708414ebad396c3bd29ce76a8d8ad1be6515a5ed3ca7a8da59d",
+        "tests/test_schema_validation.py": "8ae9282e4f26ef67116e0f8e8dc585e872cb7dbd98a677babad39e4413c6047e"
+      }
+    },
+    {
+      "id": "T-QUALITY",
+      "outcome": "Flag low-quality replies with a reason per flag; nominate review, do not certify correctness.",
+      "state": "done",
+      "risk": "medium",
+      "owner": null,
+      "scope": [
+        "src/pipeline",
+        "tests",
+        "data"
+      ],
+      "dependencies": [
+        "T-FACT"
+      ],
+      "requirements": [
+        "FR-7"
+      ],
+      "inputs": [],
+      "environment": [],
+      "scenarios": [
+        {
+          "id": "quality-reasons",
+          "actor": "ml-engineer",
+          "scope": "06_fact_policy_checked.jsonl",
+          "environment": "test",
+          "duration": "one quality pass",
+          "observable": "every flagged record in 07_flagged_responses.jsonl has a reason code",
+          "gate": "tests"
+        }
+      ],
+      "gates": [
+        {
+          "id": "tests",
+          "kind": "command",
+          "command": "python3 -m unittest tests.test_quality_checks",
+          "mandatory": true,
+          "status": "pass",
+          "evidence": {
+            "path": ".genesis/evidence/T-QUALITY-tests-20b5d578-0f2e-4813-b413-dd194f07d168.json",
+            "hash": "8b60d8644b82d53370614437974aafc04ea79e7e2d7739049d46305926dfd911",
+            "source_hash": "b53355a62547451bd6db365f93aeefb1e5d9bd6469d2ff77bdf4502dd27bb4ef",
+            "config_hash": "5cc057bf813d30f6bade58b6521e29f58e51ecb963336eb099b689bd894844f1",
+            "observed_at": "2026-10-28T09:42:36.437Z"
+          }
+        },
+        {
+          "id": "independent-review",
+          "kind": "review",
+          "command": "",
+          "mandatory": true,
+          "status": "pass",
+          "evidence": {
+            "path": ".genesis/evidence/T-QUALITY-independent-review-dc85832a-5286-489d-9936-cd1b13832196.json",
+            "hash": "14cddd81d17674a9eccd9c5f8dd4922d9e75324fc5542c7237b3928b5888b3e9",
+            "source_hash": "b53355a62547451bd6db365f93aeefb1e5d9bd6469d2ff77bdf4502dd27bb4ef",
+            "config_hash": "5cc057bf813d30f6bade58b6521e29f58e51ecb963336eb099b689bd894844f1",
+            "observed_at": "2026-10-28T09:46:07.362Z"
+          }
+        }
+      ],
+      "next_action": "Run the task pre-flight.",
+      "blocker": null,
+      "notes": [],
+      "failures": [],
+      "limitations": [],
+      "created_at": "2026-10-28T09:07:37.558Z",
+      "updated_at": "2026-10-28T09:46:07.843Z",
+      "base_manifest": {
+        "AGENTS.md": "a67615d8ed1ed3dd1b0d2cbf874ceb8d4a285c3335cdfc2d785ec80a06daecc1",
+        "CLAUDE.md": "a67615d8ed1ed3dd1b0d2cbf874ceb8d4a285c3335cdfc2d785ec80a06daecc1",
+        "SPEC.md": "cce1802190981dba461de7b37a37e09d4f0b24e13b7dbdfb0465ae49edf1b968",
+        "adr/adr01_pipeline_decision.md": "6481465f6d7913b6e467aedbd46a2e6909799c38642ea9e6105859f7c0188a6d",
+        "config.yaml": "bf3bc2393d069079a6ce1f98dce704308712cdbf278b6cb1146ab8e6f9166410",
+        "showcase/README.md": "cd5171a80cfe977dc439bac50c17af915ba0a316d8d8f1dd5e77aa26d70264f7",
+        "showcase/candidates-readable.json": "759729555dc5294ddb89b2bb3563e75a9a74f173c2aab010e1466328dcdc450a",
+        "src/pipeline/__init__.py": "23aade605c535e0d982fe491bea52673dc8edd4fdf1d540b43420385ceab3b94",
+        "src/pipeline/context_validation.py": "a8407fdc767218060d0ceea233ed69065c5661e16e520a16f7d02eaf85858870",
+        "src/pipeline/deduplication.py": "f7aa11387c96554474c06b813057e1f4f42db7bc0d81b2de335e4fa602f95772",
+        "src/pipeline/fact_validation.py": "7f4466d9a6b205289ac0c755b0597b6c2c726126d4729c53bcfd099e10aaf39b",
+        "src/pipeline/ingestion.py": "2d358bf8b4df0011ec728a4a52767f9b2afb91b0d25a3be30ab8eb112ab0ddcf",
+        "src/pipeline/inventory_fixture.py": "9cad62ba04b0b752f9bc77af7cef0395e29b04f8b9268ffe4079edac24dac48e",
+        "src/pipeline/io.py": "9e55c69e84aa819e2acaa47e76a8faca2414dcd3bc79f1663df4fef57ee41b16",
+        "src/pipeline/normalization.py": "8b2712269d1e7682f810ff5d0d1326e65d55fb121ea4031b90d6e4e47ed56b8b",
+        "src/pipeline/schema_validation.py": "e346d0ac80d555cd702d968e0feb0de394741166603c42e0cefc0b755049e1dd",
+        "tests/__init__.py": "78fb5f112b9e331e6d45cc7ba20c364344137c40dce44296fbdbe7854ba5bea2",
+        "tests/test_context_validation.py": "eb6e1b07f95938bcb2bf0e70818382011d606c8f407a636c3da46aa959a00e27",
+        "tests/test_deduplication.py": "f4a0cffe6199d814216dab4664c2eeaf846584d6abd00d44d55d7088d2689c1c",
+        "tests/test_fact_validation.py": "748b829b40d58271bf355218771b9e6b81f40611f79ba7f3ca5290b3068e3117",
+        "tests/test_ingestion.py": "7c440c3f787ada725730c999b60b38413d8ec74645142cf6396edc342f99dd79",
+        "tests/test_normalization.py": "bdfb8bea57d38708414ebad396c3bd29ce76a8d8ad1be6515a5ed3ca7a8da59d",
+        "tests/test_schema_validation.py": "8ae9282e4f26ef67116e0f8e8dc585e872cb7dbd98a677babad39e4413c6047e"
+      }
+    },
+    {
+      "id": "T-REVIEW",
+      "outcome": "Export data/review/review_queue.csv for Deepika and stop. Do not write completed golden labels.",
+      "state": "done",
+      "risk": "medium",
+      "owner": null,
+      "scope": [
+        "src/pipeline",
+        "tests",
+        "data/review",
+        "reports"
+      ],
+      "dependencies": [
+        "T-QUALITY"
+      ],
+      "requirements": [
+        "FR-8",
+        "FR-11",
+        "FR-14",
+        "NFR-2",
+        "NFR-6",
+        "AC-6",
+        "AC-9"
+      ],
+      "inputs": [],
+      "environment": [],
+      "scenarios": [
+        {
+          "id": "csv-queue",
+          "actor": "Deepika",
+          "scope": "review_queue.csv",
+          "environment": "test",
+          "duration": "one export then halt",
+          "observable": "review_queue.csv has one row per stage-7 record, empty reviewer columns, inventory row with proposed factual_error",
+          "gate": "tests"
+        }
+      ],
+      "gates": [
+        {
+          "id": "tests",
+          "kind": "command",
+          "command": "python3 -m unittest tests.test_review_export",
+          "mandatory": true,
+          "status": "pass",
+          "evidence": {
+            "path": ".genesis/evidence/T-REVIEW-tests-ed1f1752-a3b2-42a1-8f74-d90fa7846f06.json",
+            "hash": "6ace92113b2efbb03adac457882e9211330c57f365c0b0a6228510205f479edc",
+            "source_hash": "f03e51cdfeb8b63159a2170517cd3a3b83ab4d4ddd12133b60f98033345924c6",
+            "config_hash": "91f89b4bc01a60f58fac2cab4ae55cb0e9c2535d4b512b349bc81362e36042f7",
+            "observed_at": "2026-10-28T09:47:48.748Z"
+          }
+        },
+        {
+          "id": "independent-review",
+          "kind": "review",
+          "command": "",
+          "mandatory": true,
+          "status": "pass",
+          "evidence": {
+            "path": ".genesis/evidence/T-REVIEW-independent-review-2eadd3df-c26f-4ac1-a609-49708c8fdc5a.json",
+            "hash": "58b2254cda0f6253f1fde42a038ac664544d40b098a1a962aa4ef6b339f8fbd2",
+            "source_hash": "f03e51cdfeb8b63159a2170517cd3a3b83ab4d4ddd12133b60f98033345924c6",
+            "config_hash": "91f89b4bc01a60f58fac2cab4ae55cb0e9c2535d4b512b349bc81362e36042f7",
+            "observed_at": "2026-10-28T09:57:33.949Z"
+          }
+        }
+      ],
+      "next_action": "Run the task pre-flight.",
+      "blocker": null,
+      "notes": [],
+      "failures": [],
+      "limitations": [],
+      "created_at": "2026-10-28T09:07:37.682Z",
+      "updated_at": "2026-10-28T09:57:34.468Z",
+      "base_manifest": {
+        "AGENTS.md": "a67615d8ed1ed3dd1b0d2cbf874ceb8d4a285c3335cdfc2d785ec80a06daecc1",
+        "CLAUDE.md": "a67615d8ed1ed3dd1b0d2cbf874ceb8d4a285c3335cdfc2d785ec80a06daecc1",
+        "SPEC.md": "cce1802190981dba461de7b37a37e09d4f0b24e13b7dbdfb0465ae49edf1b968",
+        "adr/adr01_pipeline_decision.md": "6481465f6d7913b6e467aedbd46a2e6909799c38642ea9e6105859f7c0188a6d",
+        "config.yaml": "bf3bc2393d069079a6ce1f98dce704308712cdbf278b6cb1146ab8e6f9166410",
+        "showcase/README.md": "cd5171a80cfe977dc439bac50c17af915ba0a316d8d8f1dd5e77aa26d70264f7",
+        "showcase/candidates-readable.json": "759729555dc5294ddb89b2bb3563e75a9a74f173c2aab010e1466328dcdc450a",
+        "src/pipeline/__init__.py": "23aade605c535e0d982fe491bea52673dc8edd4fdf1d540b43420385ceab3b94",
+        "src/pipeline/context_validation.py": "a8407fdc767218060d0ceea233ed69065c5661e16e520a16f7d02eaf85858870",
+        "src/pipeline/deduplication.py": "f7aa11387c96554474c06b813057e1f4f42db7bc0d81b2de335e4fa602f95772",
+        "src/pipeline/fact_validation.py": "7f4466d9a6b205289ac0c755b0597b6c2c726126d4729c53bcfd099e10aaf39b",
+        "src/pipeline/ingestion.py": "2d358bf8b4df0011ec728a4a52767f9b2afb91b0d25a3be30ab8eb112ab0ddcf",
+        "src/pipeline/inventory_fixture.py": "9cad62ba04b0b752f9bc77af7cef0395e29b04f8b9268ffe4079edac24dac48e",
+        "src/pipeline/io.py": "9e55c69e84aa819e2acaa47e76a8faca2414dcd3bc79f1663df4fef57ee41b16",
+        "src/pipeline/normalization.py": "8b2712269d1e7682f810ff5d0d1326e65d55fb121ea4031b90d6e4e47ed56b8b",
+        "src/pipeline/quality_checks.py": "50cf7dd2ac3c2fd92cd8fa713322530ced95e0c7cfc6145824e6563568bf4094",
+        "src/pipeline/schema_validation.py": "e346d0ac80d555cd702d968e0feb0de394741166603c42e0cefc0b755049e1dd",
+        "tests/__init__.py": "78fb5f112b9e331e6d45cc7ba20c364344137c40dce44296fbdbe7854ba5bea2",
+        "tests/test_context_validation.py": "eb6e1b07f95938bcb2bf0e70818382011d606c8f407a636c3da46aa959a00e27",
+        "tests/test_deduplication.py": "f4a0cffe6199d814216dab4664c2eeaf846584d6abd00d44d55d7088d2689c1c",
+        "tests/test_fact_validation.py": "748b829b40d58271bf355218771b9e6b81f40611f79ba7f3ca5290b3068e3117",
+        "tests/test_ingestion.py": "7c440c3f787ada725730c999b60b38413d8ec74645142cf6396edc342f99dd79",
+        "tests/test_normalization.py": "bdfb8bea57d38708414ebad396c3bd29ce76a8d8ad1be6515a5ed3ca7a8da59d",
+        "tests/test_quality_checks.py": "00c2978e004401e0912ddb0f5f894b8e22b2251bfae0eae266eaa7f26443889f",
+        "tests/test_schema_validation.py": "8ae9282e4f26ef67116e0f8e8dc585e872cb7dbd98a677babad39e4413c6047e"
+      }
+    },
+    {
+      "id": "T-SPLIT",
+      "outcome": "After reviewed CSV is returned, validate thread-level splits with no cross-split leakage.",
+      "state": "done",
+      "risk": "medium",
+      "owner": null,
+      "scope": [
+        "src/pipeline",
+        "tests",
+        "data"
+      ],
+      "dependencies": [
+        "T-REVIEW"
+      ],
+      "requirements": [
+        "FR-9",
+        "AC-4"
+      ],
+      "inputs": [],
+      "environment": [],
+      "scenarios": [
+        {
+          "id": "no-leak",
+          "actor": "ml-engineer",
+          "scope": "reviewed golden records",
+          "environment": "test",
+          "duration": "one split pass",
+          "observable": "no thread_id appears in more than one split",
+          "gate": "tests"
+        }
+      ],
+      "gates": [
+        {
+          "id": "tests",
+          "kind": "command",
+          "command": "python3 -m unittest tests.test_split_validation",
+          "mandatory": true,
+          "status": "pass",
+          "evidence": {
+            "path": ".genesis/evidence/T-SPLIT-tests-3cee067e-7b22-4240-870d-75907d403185.json",
+            "hash": "5e9357acaffe0869299b641163eef2f33731b311e030222442c3ed79f39edf8a",
+            "source_hash": "b18f6f442f08c22db9185c7b8d9b91abec4b6d33576907a47b3ce90c7c5b039a",
+            "config_hash": "95d7e2b2a3f34b0d2a5113b524b44b3478714df476218e85291174fedc21ae9a",
+            "observed_at": "2026-10-28T17:24:11.234Z"
+          }
+        },
+        {
+          "id": "independent-review",
+          "kind": "review",
+          "command": "",
+          "mandatory": true,
+          "status": "pass",
+          "evidence": {
+            "path": ".genesis/evidence/T-SPLIT-independent-review-66071465-77d8-4025-a3b1-bb2f423d00a6.json",
+            "hash": "523cf7e93458bf8547d8a0485e5be6f661b58a9bad367ad8e18484e4b0f8a5dc",
+            "source_hash": "b18f6f442f08c22db9185c7b8d9b91abec4b6d33576907a47b3ce90c7c5b039a",
+            "config_hash": "95d7e2b2a3f34b0d2a5113b524b44b3478714df476218e85291174fedc21ae9a",
+            "observed_at": "2026-10-28T17:28:06.146Z"
+          }
+        }
+      ],
+      "next_action": "Run the task pre-flight.",
+      "blocker": null,
+      "notes": [],
+      "failures": [],
+      "limitations": [],
+      "created_at": "2026-10-28T09:07:37.806Z",
+      "updated_at": "2026-10-28T17:28:06.806Z",
+      "base_manifest": {
+        "AGENTS.md": "a67615d8ed1ed3dd1b0d2cbf874ceb8d4a285c3335cdfc2d785ec80a06daecc1",
+        "CLAUDE.md": "a67615d8ed1ed3dd1b0d2cbf874ceb8d4a285c3335cdfc2d785ec80a06daecc1",
+        "SPEC.md": "cce1802190981dba461de7b37a37e09d4f0b24e13b7dbdfb0465ae49edf1b968",
+        "adr/adr01_pipeline_decision.md": "6481465f6d7913b6e467aedbd46a2e6909799c38642ea9e6105859f7c0188a6d",
+        "config.yaml": "bf3bc2393d069079a6ce1f98dce704308712cdbf278b6cb1146ab8e6f9166410",
+        "showcase/README.md": "cd5171a80cfe977dc439bac50c17af915ba0a316d8d8f1dd5e77aa26d70264f7",
+        "showcase/candidates-readable.json": "759729555dc5294ddb89b2bb3563e75a9a74f173c2aab010e1466328dcdc450a",
+        "src/pipeline/__init__.py": "23aade605c535e0d982fe491bea52673dc8edd4fdf1d540b43420385ceab3b94",
+        "src/pipeline/context_validation.py": "a8407fdc767218060d0ceea233ed69065c5661e16e520a16f7d02eaf85858870",
+        "src/pipeline/deduplication.py": "f7aa11387c96554474c06b813057e1f4f42db7bc0d81b2de335e4fa602f95772",
+        "src/pipeline/fact_validation.py": "7f4466d9a6b205289ac0c755b0597b6c2c726126d4729c53bcfd099e10aaf39b",
+        "src/pipeline/ingestion.py": "884d0a17e758c90ba1ae69c680197327e94ea5d45221418df768e8893160e97d",
+        "src/pipeline/inventory_fixture.py": "9cad62ba04b0b752f9bc77af7cef0395e29b04f8b9268ffe4079edac24dac48e",
+        "src/pipeline/io.py": "9e55c69e84aa819e2acaa47e76a8faca2414dcd3bc79f1663df4fef57ee41b16",
+        "src/pipeline/labeling.py": "7063ec31e15d63032255a0fc3eec80f0b84dd21b2f99d5ea6ca38e48127aa3a0",
+        "src/pipeline/normalization.py": "8b2712269d1e7682f810ff5d0d1326e65d55fb121ea4031b90d6e4e47ed56b8b",
+        "src/pipeline/pipeline.py": "0f1816276fba21d6b74d0b616bbc90bcb5abfeae12eb77e60ca2aa820a283a92",
+        "src/pipeline/quality_checks.py": "50cf7dd2ac3c2fd92cd8fa713322530ced95e0c7cfc6145824e6563568bf4094",
+        "src/pipeline/schema_validation.py": "e346d0ac80d555cd702d968e0feb0de394741166603c42e0cefc0b755049e1dd",
+        "tests/__init__.py": "78fb5f112b9e331e6d45cc7ba20c364344137c40dce44296fbdbe7854ba5bea2",
+        "tests/test_context_validation.py": "eb6e1b07f95938bcb2bf0e70818382011d606c8f407a636c3da46aa959a00e27",
+        "tests/test_deduplication.py": "f4a0cffe6199d814216dab4664c2eeaf846584d6abd00d44d55d7088d2689c1c",
+        "tests/test_fact_validation.py": "748b829b40d58271bf355218771b9e6b81f40611f79ba7f3ca5290b3068e3117",
+        "tests/test_ingestion.py": "9d7133df13ea38963b12ca1cccf7fb8bfa13333452b42fef6483fcc026fcde0a",
+        "tests/test_normalization.py": "bdfb8bea57d38708414ebad396c3bd29ce76a8d8ad1be6515a5ed3ca7a8da59d",
+        "tests/test_quality_checks.py": "00c2978e004401e0912ddb0f5f894b8e22b2251bfae0eae266eaa7f26443889f",
+        "tests/test_review_export.py": "969cddad856dc22e19f1e484291fe9459707c6deee2083825eb61999a6778ff3",
+        "tests/test_schema_validation.py": "8ae9282e4f26ef67116e0f8e8dc585e872cb7dbd98a677babad39e4413c6047e"
+      }
+    },
+    {
+      "id": "T-EXPORT",
+      "outcome": "After reviewed CSV is returned, export golden split files and a quality report.",
+      "state": "done",
+      "risk": "medium",
+      "owner": null,
+      "scope": [
+        "src/pipeline",
+        "tests",
+        "data/golden",
+        "reports"
+      ],
+      "dependencies": [
+        "T-SPLIT"
+      ],
+      "requirements": [
+        "FR-10",
+        "AC-5"
+      ],
+      "inputs": [],
+      "environment": [],
+      "scenarios": [
+        {
+          "id": "golden-export",
+          "actor": "ml-engineer",
+          "scope": "golden jsonl files",
+          "environment": "test",
+          "duration": "one export",
+          "observable": "golden files contain only checklist-passing reviewed records and a second run matches bytes aside from run-metadata timestamps",
+          "gate": "tests"
+        }
+      ],
+      "gates": [
+        {
+          "id": "tests",
+          "kind": "command",
+          "command": "python3 -m unittest tests.test_export",
+          "mandatory": true,
+          "status": "pass",
+          "evidence": {
+            "path": ".genesis/evidence/T-EXPORT-tests-9339e61b-eff5-4f36-afb6-e58813f7b777.json",
+            "hash": "03f3f15703884b0315882f0fffc7f02e43a2fc69ccf91d3f5c59d7d1c816d04b",
+            "source_hash": "6d78b0bdc51f7b750fdde4d4c9e52149c52489d9238a9a526c84e6b664bab13b",
+            "config_hash": "d9304e6134fe9426c8b46da0c5acb4ebcae7b5c5a9dd3bbd2af1a3d9eebf2ec2",
+            "observed_at": "2026-10-28T17:28:45.806Z"
+          }
+        },
+        {
+          "id": "independent-review",
+          "kind": "review",
+          "command": "",
+          "mandatory": true,
+          "status": "pass",
+          "evidence": {
+            "path": ".genesis/evidence/T-EXPORT-independent-review-b2ed3279-86e1-41bf-8874-b5a2fb0a9328.json",
+            "hash": "da8a1efe12b21ae97be600368db12332f825e8b1efcf4e69cf114d71930b35ca",
+            "source_hash": "6d78b0bdc51f7b750fdde4d4c9e52149c52489d9238a9a526c84e6b664bab13b",
+            "config_hash": "d9304e6134fe9426c8b46da0c5acb4ebcae7b5c5a9dd3bbd2af1a3d9eebf2ec2",
+            "observed_at": "2026-10-28T17:30:31.158Z"
+          }
+        }
+      ],
+      "next_action": "Run the task pre-flight.",
+      "blocker": null,
+      "notes": [],
+      "failures": [],
+      "limitations": [],
+      "created_at": "2026-10-28T09:07:37.929Z",
+      "updated_at": "2026-10-28T17:30:31.905Z",
+      "base_manifest": {
+        "AGENTS.md": "a67615d8ed1ed3dd1b0d2cbf874ceb8d4a285c3335cdfc2d785ec80a06daecc1",
+        "CLAUDE.md": "a67615d8ed1ed3dd1b0d2cbf874ceb8d4a285c3335cdfc2d785ec80a06daecc1",
+        "SPEC.md": "cce1802190981dba461de7b37a37e09d4f0b24e13b7dbdfb0465ae49edf1b968",
+        "adr/adr01_pipeline_decision.md": "6481465f6d7913b6e467aedbd46a2e6909799c38642ea9e6105859f7c0188a6d",
+        "config.yaml": "bf3bc2393d069079a6ce1f98dce704308712cdbf278b6cb1146ab8e6f9166410",
+        "data/intermediate/02_schema_errors.jsonl": "78fb5f112b9e331e6d45cc7ba20c364344137c40dce44296fbdbe7854ba5bea2",
+        "data/intermediate/02_schema_valid.jsonl": "f9610608a18e7b0d26fb6831edafe75dcef8bd533443f2b04f18593fc1dab40c",
+        "data/intermediate/03_normalized.jsonl": "f9610608a18e7b0d26fb6831edafe75dcef8bd533443f2b04f18593fc1dab40c",
+        "data/intermediate/04_deduplicated.jsonl": "171387562f4a365ce1f31534e3f5d5b5d88bb57c575a0502d9ab36a6829a4790",
+        "data/intermediate/04_duplicate_report.jsonl": "09f977343427ce4f5b2b4eb296769c4dbcc941baed25176a05b5e6f8c29ebcf7",
+        "data/intermediate/05_context_validated.jsonl": "f476e5782da45ba21631dcb181dbb69b8fade1de766a2dd49fc83e50ad512a7b",
+        "data/intermediate/06_fact_policy_checked.jsonl": "2100b393a91867fc1667aece5e6340955380f73332e63cacf71d99fe3d2497a0",
+        "data/intermediate/07_flagged_responses.jsonl": "3c9cf748445ccdbf893d6a3743e962962a0e992ab2fa28415e9698ae6f5c79e4",
+        "data/intermediate/08_reviewed_golden.jsonl": "51bb6effda97fb87ab6ca0aadbd3e7c047d840bc57b48dbdaa0e3ace0864866f",
+        "data/intermediate/09_split_validated.jsonl": "281d1471d1c10f724669d626d62e5aeddd8a786ae8c3bf4883a6335369be4dc9",
+        "data/raw/01_ingest_metadata.json": "2c2ed4b517272db120835f716bda8710480e09bea87faa8ad0c11cc34d2d2924",
+        "data/raw/01_raw_snapshot.jsonl": "f9610608a18e7b0d26fb6831edafe75dcef8bd533443f2b04f18593fc1dab40c",
+        "data/review/review_queue.csv": "e282d8d5f1d9409527f94c14395edab11cb44b919630bb7992196a81746a17ce",
+        "data/review/review_queue_reviewed.csv": "e6f3396b1ffcef7873e79f901997ac8059a18121fe49b3721327b579a90bfe32",
+        "showcase/README.md": "cd5171a80cfe977dc439bac50c17af915ba0a316d8d8f1dd5e77aa26d70264f7",
+        "showcase/candidates-readable.json": "759729555dc5294ddb89b2bb3563e75a9a74f173c2aab010e1466328dcdc450a",
+        "src/pipeline/__init__.py": "23aade605c535e0d982fe491bea52673dc8edd4fdf1d540b43420385ceab3b94",
+        "src/pipeline/context_validation.py": "a8407fdc767218060d0ceea233ed69065c5661e16e520a16f7d02eaf85858870",
+        "src/pipeline/deduplication.py": "f7aa11387c96554474c06b813057e1f4f42db7bc0d81b2de335e4fa602f95772",
+        "src/pipeline/fact_validation.py": "7f4466d9a6b205289ac0c755b0597b6c2c726126d4729c53bcfd099e10aaf39b",
+        "src/pipeline/ingestion.py": "884d0a17e758c90ba1ae69c680197327e94ea5d45221418df768e8893160e97d",
+        "src/pipeline/inventory_fixture.py": "9cad62ba04b0b752f9bc77af7cef0395e29b04f8b9268ffe4079edac24dac48e",
+        "src/pipeline/io.py": "9e55c69e84aa819e2acaa47e76a8faca2414dcd3bc79f1663df4fef57ee41b16",
+        "src/pipeline/labeling.py": "d1d8a90e7f1a2a53ee7ad08414d3e97fb83652e66bb99e34d283119ce2bc8416",
+        "src/pipeline/normalization.py": "8b2712269d1e7682f810ff5d0d1326e65d55fb121ea4031b90d6e4e47ed56b8b",
+        "src/pipeline/pipeline.py": "0f1816276fba21d6b74d0b616bbc90bcb5abfeae12eb77e60ca2aa820a283a92",
+        "src/pipeline/quality_checks.py": "50cf7dd2ac3c2fd92cd8fa713322530ced95e0c7cfc6145824e6563568bf4094",
+        "src/pipeline/schema_validation.py": "e346d0ac80d555cd702d968e0feb0de394741166603c42e0cefc0b755049e1dd",
+        "src/pipeline/split_validation.py": "a03615e6104dfb6efc68ad81d451a66a1796ae4e831aa6d5daf25367448cdb3c",
+        "tests/__init__.py": "78fb5f112b9e331e6d45cc7ba20c364344137c40dce44296fbdbe7854ba5bea2",
+        "tests/test_context_validation.py": "eb6e1b07f95938bcb2bf0e70818382011d606c8f407a636c3da46aa959a00e27",
+        "tests/test_deduplication.py": "f4a0cffe6199d814216dab4664c2eeaf846584d6abd00d44d55d7088d2689c1c",
+        "tests/test_fact_validation.py": "748b829b40d58271bf355218771b9e6b81f40611f79ba7f3ca5290b3068e3117",
+        "tests/test_ingestion.py": "9d7133df13ea38963b12ca1cccf7fb8bfa13333452b42fef6483fcc026fcde0a",
+        "tests/test_normalization.py": "bdfb8bea57d38708414ebad396c3bd29ce76a8d8ad1be6515a5ed3ca7a8da59d",
+        "tests/test_quality_checks.py": "00c2978e004401e0912ddb0f5f894b8e22b2251bfae0eae266eaa7f26443889f",
+        "tests/test_review_export.py": "969cddad856dc22e19f1e484291fe9459707c6deee2083825eb61999a6778ff3",
+        "tests/test_schema_validation.py": "8ae9282e4f26ef67116e0f8e8dc585e872cb7dbd98a677babad39e4413c6047e",
+        "tests/test_split_validation.py": "214e56f4fb6c9d9413785258ee56676bed6310bed476e8984f9dbf29ae6255a9"
+      }
+    },
+    {
+      "id": "T-HANDOFF-LANG",
+      "outcome": "Recognise Portuguese and Spanish handoff replies so quality checks stop nominating them as possibly unanswered.",
+      "state": "rejected",
+      "risk": "low",
+      "owner": null,
+      "scope": [
+        "config.yaml",
+        "tests"
+      ],
+      "dependencies": [],
+      "requirements": [
+        "FR-7",
+        "FR-13"
+      ],
+      "inputs": [],
+      "environment": [],
+      "scenarios": [],
+      "gates": [
+        {
+          "id": "tests",
+          "kind": "command",
+          "command": "python3 -m unittest tests.test_quality_checks",
+          "mandatory": true,
+          "status": "pending",
+          "evidence": null
+        }
+      ],
+      "next_action": "Run the task pre-flight.",
+      "blocker": null,
+      "notes": [],
+      "failures": [],
+      "limitations": [],
+      "created_at": "2026-10-28T17:32:50.224Z",
+      "updated_at": "2026-10-28T17:32:50.225Z"
+    },
+    {
+      "id": "T-RESPLIT",
+      "outcome": "Move two error threads (thr_9a2f0810bb2e wrong price, thr_9b6f5ee11ee7 refund promise) from train to validation via documented config overrides, so validation contains error examples; re-export golden files.",
+      "state": "rejected",
+      "risk": "medium",
+      "owner": null,
+      "scope": [
+        "config.yaml",
+        "src/pipeline",
+        "tests",
+        "data",
+        "reports"
+      ],
+      "dependencies": [
+        "T-HANDOFF-LANG"
+      ],
+      "requirements": [
+        "FR-9",
+        "AC-4",
+        "FR-10"
+      ],
+      "inputs": [],
+      "environment": [],
+      "scenarios": [],
+      "gates": [
+        {
+          "id": "tests",
+          "kind": "command",
+          "command": "python3 -m unittest tests.test_split_validation tests.test_export",
+          "mandatory": true,
+          "status": "pending",
+          "evidence": null
+        },
+        {
+          "id": "independent-review",
+          "kind": "review",
+          "command": "",
+          "mandatory": true,
+          "status": "pending",
+          "evidence": null
+        }
+      ],
+      "next_action": "Run the task pre-flight.",
+      "blocker": null,
+      "notes": [],
+      "failures": [],
+      "limitations": [],
+      "created_at": "2026-10-28T17:32:50.683Z",
+      "updated_at": "2026-10-28T17:32:50.683Z"
+    },
+    {
+      "id": "T-REEXPORT",
+      "outcome": "Re-run merge, split validation and golden export from the updated reviewed CSV (dec_70f0665919f2 relabelled policy_violation) and prove the relabel reaches the golden files.",
+      "state": "done",
+      "risk": "medium",
+      "owner": null,
+      "scope": [
+        "data",
+        "reports",
+        "tests"
+      ],
+      "dependencies": [],
+      "requirements": [
+        "FR-8",
+        "FR-9",
+        "FR-10",
+        "AC-4",
+        "AC-5"
+      ],
+      "inputs": [],
+      "environment": [],
+      "scenarios": [],
+      "gates": [
+        {
+          "id": "tests",
+          "kind": "command",
+          "command": "python3 -m unittest tests.test_split_validation tests.test_export",
+          "mandatory": true,
+          "status": "pass",
+          "evidence": {
+            "path": ".genesis/evidence/T-REEXPORT-tests-b786229f-61c5-4fe7-bf86-608cfad1ef86.json",
+            "hash": "6f913a45a8206ff0eb3b7dcbbdb6721bf4cfad4e050e785069b9bb5f3cc98230",
+            "source_hash": "dcd15bcf19901f734c3ffb19c5b6b1f611665f3858f368281b0dd5be19d42eec",
+            "config_hash": "7e229afc8c6fb365168e9c23016e0a738fc35bd97fda6776fd3a7d9ff6c08710",
+            "observed_at": "2026-10-28T17:45:39.769Z"
+          }
+        },
+        {
+          "id": "independent-review",
+          "kind": "review",
+          "command": "",
+          "mandatory": true,
+          "status": "pass",
+          "evidence": {
+            "path": ".genesis/evidence/T-REEXPORT-independent-review-4f07367b-2b93-402f-a659-3cdbb04bc889.json",
+            "hash": "c0a5802913aa9c11a8eaaef2f093ee66b3ab2b72b9c8b2d816b9de616dab6820",
+            "source_hash": "dcd15bcf19901f734c3ffb19c5b6b1f611665f3858f368281b0dd5be19d42eec",
+            "config_hash": "7e229afc8c6fb365168e9c23016e0a738fc35bd97fda6776fd3a7d9ff6c08710",
+            "observed_at": "2026-10-28T17:52:45.332Z"
+          }
+        }
+      ],
+      "next_action": "Run the task pre-flight.",
+      "blocker": null,
+      "notes": [],
+      "failures": [],
+      "limitations": [],
+      "created_at": "2026-10-28T17:42:24.353Z",
+      "updated_at": "2026-10-28T17:52:46.074Z",
+      "base_manifest": {
+        "AGENTS.md": "a67615d8ed1ed3dd1b0d2cbf874ceb8d4a285c3335cdfc2d785ec80a06daecc1",
+        "CLAUDE.md": "a67615d8ed1ed3dd1b0d2cbf874ceb8d4a285c3335cdfc2d785ec80a06daecc1",
+        "FUTURE_IMPROVEMENTS.md": "1b287f29ab83e667f20d67b9039f7a6db05b44b574bd05bb2531b5b3964e9287",
+        "SPEC.md": "cce1802190981dba461de7b37a37e09d4f0b24e13b7dbdfb0465ae49edf1b968",
+        "adr/adr01_pipeline_decision.md": "6481465f6d7913b6e467aedbd46a2e6909799c38642ea9e6105859f7c0188a6d",
+        "config.yaml": "bf3bc2393d069079a6ce1f98dce704308712cdbf278b6cb1146ab8e6f9166410",
+        "data/golden/golden_test.jsonl": "7feaf73f341c161d500dcf6cc1610cd3027ef838a771cdc11986e1a9df3e0697",
+        "data/golden/golden_train.jsonl": "3b9a4d71fda4124b5bf8d79ec640357ae4ae16938bb9c3d350666f4725eb1d00",
+        "data/golden/golden_validation.jsonl": "d265ff086c2e2fd21115ce8d27b97fcc4087bab45cbdeec43fe735a64fb24198",
+        "data/intermediate/02_schema_errors.jsonl": "78fb5f112b9e331e6d45cc7ba20c364344137c40dce44296fbdbe7854ba5bea2",
+        "data/intermediate/02_schema_valid.jsonl": "f9610608a18e7b0d26fb6831edafe75dcef8bd533443f2b04f18593fc1dab40c",
+        "data/intermediate/03_normalized.jsonl": "f9610608a18e7b0d26fb6831edafe75dcef8bd533443f2b04f18593fc1dab40c",
+        "data/intermediate/04_deduplicated.jsonl": "171387562f4a365ce1f31534e3f5d5b5d88bb57c575a0502d9ab36a6829a4790",
+        "data/intermediate/04_duplicate_report.jsonl": "09f977343427ce4f5b2b4eb296769c4dbcc941baed25176a05b5e6f8c29ebcf7",
+        "data/intermediate/05_context_validated.jsonl": "f476e5782da45ba21631dcb181dbb69b8fade1de766a2dd49fc83e50ad512a7b",
+        "data/intermediate/06_fact_policy_checked.jsonl": "2100b393a91867fc1667aece5e6340955380f73332e63cacf71d99fe3d2497a0",
+        "data/intermediate/07_flagged_responses.jsonl": "3c9cf748445ccdbf893d6a3743e962962a0e992ab2fa28415e9698ae6f5c79e4",
+        "data/intermediate/08_reviewed_golden.jsonl": "82ca54fa0922fdfb7fe4d0a1d252170b61721a86dd9c57a5d032cfb37221c3e7",
+        "data/intermediate/09_split_validated.jsonl": "983189862069da993908e2e16183d3f873fe961a99f942e9e330e7f3371d1b5f",
+        "data/raw/01_ingest_metadata.json": "2c2ed4b517272db120835f716bda8710480e09bea87faa8ad0c11cc34d2d2924",
+        "data/raw/01_raw_snapshot.jsonl": "f9610608a18e7b0d26fb6831edafe75dcef8bd533443f2b04f18593fc1dab40c",
+        "data/review/review_queue.csv": "e282d8d5f1d9409527f94c14395edab11cb44b919630bb7992196a81746a17ce",
+        "data/review/review_queue_reviewed.csv": "d6a103b0385028f63e9a436dbe6f3341b4736e1a8118244618d0498a188d35bb",
+        "reports/quality_report.json": "74555e04e1a9bfdc0df8b359b2e45b01066c351cffb894670fd38b0b53754dbd",
+        "showcase/README.md": "cd5171a80cfe977dc439bac50c17af915ba0a316d8d8f1dd5e77aa26d70264f7",
+        "showcase/candidates-readable.json": "759729555dc5294ddb89b2bb3563e75a9a74f173c2aab010e1466328dcdc450a",
+        "src/pipeline/__init__.py": "23aade605c535e0d982fe491bea52673dc8edd4fdf1d540b43420385ceab3b94",
+        "src/pipeline/context_validation.py": "a8407fdc767218060d0ceea233ed69065c5661e16e520a16f7d02eaf85858870",
+        "src/pipeline/deduplication.py": "f7aa11387c96554474c06b813057e1f4f42db7bc0d81b2de335e4fa602f95772",
+        "src/pipeline/export.py": "1a13ae49765b2439076a65ed9fa0ddd90536ac163a292d02d3ef2639aeda980b",
+        "src/pipeline/fact_validation.py": "7f4466d9a6b205289ac0c755b0597b6c2c726126d4729c53bcfd099e10aaf39b",
+        "src/pipeline/ingestion.py": "884d0a17e758c90ba1ae69c680197327e94ea5d45221418df768e8893160e97d",
+        "src/pipeline/inventory_fixture.py": "9cad62ba04b0b752f9bc77af7cef0395e29b04f8b9268ffe4079edac24dac48e",
+        "src/pipeline/io.py": "9e55c69e84aa819e2acaa47e76a8faca2414dcd3bc79f1663df4fef57ee41b16",
+        "src/pipeline/labeling.py": "d1d8a90e7f1a2a53ee7ad08414d3e97fb83652e66bb99e34d283119ce2bc8416",
+        "src/pipeline/normalization.py": "8b2712269d1e7682f810ff5d0d1326e65d55fb121ea4031b90d6e4e47ed56b8b",
+        "src/pipeline/pipeline.py": "0f1816276fba21d6b74d0b616bbc90bcb5abfeae12eb77e60ca2aa820a283a92",
+        "src/pipeline/quality_checks.py": "50cf7dd2ac3c2fd92cd8fa713322530ced95e0c7cfc6145824e6563568bf4094",
+        "src/pipeline/schema_validation.py": "e346d0ac80d555cd702d968e0feb0de394741166603c42e0cefc0b755049e1dd",
+        "src/pipeline/split_validation.py": "a03615e6104dfb6efc68ad81d451a66a1796ae4e831aa6d5daf25367448cdb3c",
+        "tests/__init__.py": "78fb5f112b9e331e6d45cc7ba20c364344137c40dce44296fbdbe7854ba5bea2",
+        "tests/test_context_validation.py": "eb6e1b07f95938bcb2bf0e70818382011d606c8f407a636c3da46aa959a00e27",
+        "tests/test_deduplication.py": "f4a0cffe6199d814216dab4664c2eeaf846584d6abd00d44d55d7088d2689c1c",
+        "tests/test_export.py": "06c531e58465462983927eeb2f2ec27fe3c068a632f1e381a623d93052d4e5a4",
+        "tests/test_fact_validation.py": "748b829b40d58271bf355218771b9e6b81f40611f79ba7f3ca5290b3068e3117",
+        "tests/test_ingestion.py": "9d7133df13ea38963b12ca1cccf7fb8bfa13333452b42fef6483fcc026fcde0a",
+        "tests/test_normalization.py": "bdfb8bea57d38708414ebad396c3bd29ce76a8d8ad1be6515a5ed3ca7a8da59d",
+        "tests/test_quality_checks.py": "00c2978e004401e0912ddb0f5f894b8e22b2251bfae0eae266eaa7f26443889f",
+        "tests/test_review_export.py": "969cddad856dc22e19f1e484291fe9459707c6deee2083825eb61999a6778ff3",
+        "tests/test_schema_validation.py": "8ae9282e4f26ef67116e0f8e8dc585e872cb7dbd98a677babad39e4413c6047e",
+        "tests/test_split_validation.py": "214e56f4fb6c9d9413785258ee56676bed6310bed476e8984f9dbf29ae6255a9"
+      }
+    }
+  ],
+  "learning_proposals": [],
+  "cleanup_proposals": [],
+  "controls": [
+    {
+      "id": "e33cc090-e7bd-49c0-b93a-e380b4452575",
+      "at": "2026-10-28T09:40:36.730Z",
+      "action": "approve",
+      "task": "T-FACT",
+      "human": "Deepika",
+      "reason": "looking good to go",
+      "revision": null
+    },
+    {
+      "id": "b763f236-a5a0-4072-8e33-681feb839994",
+      "at": "2026-10-28T09:41:32.823Z",
+      "action": "approve",
+      "task": "T-FACT",
+      "human": "Deepika",
+      "reason": "looking good to go",
+      "revision": null
+    },
+    {
+      "id": "dc85832a-5286-489d-9936-cd1b13832196",
+      "at": "2026-10-28T09:46:07.362Z",
+      "action": "approve",
+      "task": "T-QUALITY",
+      "human": "Deepika",
+      "reason": "approving the quality check",
+      "revision": null
+    },
+    {
+      "id": "2eadd3df-c26f-4ac1-a609-49708c8fdc5a",
+      "at": "2026-10-28T09:57:33.949Z",
+      "action": "approve",
+      "task": "T-REVIEW",
+      "human": "Deepika",
+      "reason": "reviewd",
+      "revision": null
+    },
+    {
+      "id": "06e14553-b612-408a-ba76-9139729e64af",
+      "at": "2026-10-28T09:57:46.434Z",
+      "action": "pause",
+      "task": "T-SPLIT",
+      "human": null,
+      "reason": null,
+      "revision": null
+    },
+    {
+      "id": "2b9d8cd4-95ce-41ff-87b8-fa588cb108b4",
+      "at": "2026-10-28T17:23:29.442Z",
+      "action": "resume",
+      "task": "T-SPLIT",
+      "human": null,
+      "reason": null,
+      "revision": null
+    },
+    {
+      "id": "66071465-77d8-4025-a3b1-bb2f423d00a6",
+      "at": "2026-10-28T17:28:06.146Z",
+      "action": "approve",
+      "task": "T-SPLIT",
+      "human": "Deepika",
+      "reason": "split approved",
+      "revision": null
+    },
+    {
+      "id": "b2ed3279-86e1-41bf-8874-b5a2fb0a9328",
+      "at": "2026-10-28T17:30:31.158Z",
+      "action": "approve",
+      "task": "T-EXPORT",
+      "human": "Deepika",
+      "reason": "export golden dataset",
+      "revision": null
+    },
+    {
+      "id": "4388c441-82cf-418b-b6cf-92426e1cf24b",
+      "at": "2026-10-28T17:42:23.458Z",
+      "action": "reject",
+      "task": "T-HANDOFF-LANG",
+      "human": "Deepika",
+      "reason": "Deferred by Deepika as a future improvement; details in FUTURE_IMPROVEMENTS.md",
+      "revision": null
+    },
+    {
+      "id": "e12bbc1b-af54-4af9-a0c1-48433750cfb8",
+      "at": "2026-10-28T17:42:23.892Z",
+      "action": "reject",
+      "task": "T-RESPLIT",
+      "human": "Deepika",
+      "reason": "Deferred by Deepika as a future improvement; details in FUTURE_IMPROVEMENTS.md",
+      "revision": null
+    },
+    {
+      "id": "2729ae72-7afa-4949-98a3-2daf1d070ba3",
+      "at": "2026-10-28T17:45:24.511Z",
+      "action": "approve",
+      "task": "T-REEXPORT",
+      "human": "Deepika",
+      "reason": "corrected the label",
+      "revision": null
+    },
+    {
+      "id": "4f07367b-2b93-402f-a659-3cdbb04bc889",
+      "at": "2026-10-28T17:52:45.332Z",
+      "action": "approve",
+      "task": "T-REEXPORT",
+      "human": "Deepika",
+      "reason": "corrected the label",
+      "revision": null
+    }
+  ],
+  "attempts": [
+    {
+      "id": "ffcb3198-123f-414f-8c85-e4de7ad24fd3",
+      "task": "T-INGEST",
+      "kind": "gate",
+      "command": "python3 -m unittest tests.test_ingestion",
+      "timeout": 120000,
+      "authorization": null,
+      "pid": 34166,
+      "child_pid": 34227,
+      "started_at": "2026-10-28T09:27:52.639Z",
+      "status": "passed",
+      "before_hash": "797d2043ed8e3fbb155ff8ccc5e8228a2b873f8bf90e335c1e8b764fb2e9023c",
+      "config_hash": "81cb84cd4c08a9862756c34b5a00dbd85b7af071c848d0a224b0680dc4a665cd",
+      "environment": {
+        "node": "v26.8.2",
+        "platform": "darwin",
+        "arch": "arm64",
+        "verifier": "cbdddbf25e5ed5f3406b93881ae54f64d11a8c54f0bfe177d19d9d9946a6a971",
+        "variables": {}
+      },
+      "cost": null,
+      "stop_reason": null,
+      "ended_at": "2026-10-28T09:27:52.859Z"
+    },
+    {
+      "id": "432aeace-1c05-40f1-a9b5-4b8f7dca0881",
+      "task": "T-SCHEMA",
+      "kind": "gate",
+      "command": "python3 -m unittest tests.test_schema_validation",
+      "timeout": 120000,
+      "authorization": null,
+      "pid": 34884,
+      "child_pid": 34957,
+      "started_at": "2026-10-28T09:31:01.503Z",
+      "status": "passed",
+      "before_hash": "08b0bd15de259d66caec031f91eba347f5f82860f42da052cb89e71bc8ec5298",
+      "config_hash": "2284e9110db4f4c5ec6b507508ef95a575014b217f528e841d3c6c8cb1c02aac",
+      "environment": {
+        "node": "v26.8.2",
+        "platform": "darwin",
+        "arch": "arm64",
+        "verifier": "cbdddbf25e5ed5f3406b93881ae54f64d11a8c54f0bfe177d19d9d9946a6a971",
+        "variables": {}
+      },
+      "cost": null,
+      "stop_reason": null,
+      "ended_at": "2026-10-28T09:31:01.746Z"
+    },
+    {
+      "id": "a5fa59f0-b850-424d-8f7b-77eb4b3fb684",
+      "task": "T-NORMALIZE",
+      "kind": "gate",
+      "command": "python3 -m unittest tests.test_normalization",
+      "timeout": 120000,
+      "authorization": null,
+      "pid": 35388,
+      "child_pid": 35473,
+      "started_at": "2026-10-28T09:31:24.824Z",
+      "status": "passed",
+      "before_hash": "6536647900124e3a1ce73dd8411080a3b8f5d8d4c81b725a3c95914a9056cc42",
+      "config_hash": "af1d6f908abb3fad10a783f69a7a90180e6f324459974c2ca323027aec42dbbd",
+      "environment": {
+        "node": "v26.8.2",
+        "platform": "darwin",
+        "arch": "arm64",
+        "verifier": "cbdddbf25e5ed5f3406b93881ae54f64d11a8c54f0bfe177d19d9d9946a6a971",
+        "variables": {}
+      },
+      "cost": null,
+      "stop_reason": null,
+      "ended_at": "2026-10-28T09:31:25.066Z"
+    },
+    {
+      "id": "a9212273-1ed0-4cde-87e1-8c42386e6d36",
+      "task": "T-DEDUP",
+      "kind": "gate",
+      "command": "python3 -m unittest tests.test_deduplication",
+      "timeout": 120000,
+      "authorization": null,
+      "pid": 35963,
+      "child_pid": 36060,
+      "started_at": "2026-10-28T09:31:52.920Z",
+      "status": "passed",
+      "before_hash": "6332a393174bb72da39b26d4f019ab9919127f7cc3948a7682f45f493420185c",
+      "config_hash": "b803d76721ef3700e740f51f8979b24db619c7334a3059505f8bf5915a8e9c01",
+      "environment": {
+        "node": "v26.8.2",
+        "platform": "darwin",
+        "arch": "arm64",
+        "verifier": "cbdddbf25e5ed5f3406b93881ae54f64d11a8c54f0bfe177d19d9d9946a6a971",
+        "variables": {}
+      },
+      "cost": null,
+      "stop_reason": null,
+      "ended_at": "2026-10-28T09:31:53.222Z"
+    },
+    {
+      "id": "0153f731-f5a7-4a54-b9e9-11213f9a66ac",
+      "task": "T-CONTEXT",
+      "kind": "gate",
+      "command": "python3 -m unittest tests.test_context_validation",
+      "timeout": 120000,
+      "authorization": null,
+      "pid": 36587,
+      "child_pid": 36696,
+      "started_at": "2026-10-28T09:32:18.705Z",
+      "status": "passed",
+      "before_hash": "6c3f8fdb851720a250c961165eb331657e749ed6052b9f019aa3724930975261",
+      "config_hash": "c3965cfc02a43477c64cff9e7c6f1f5b80cea118e9b5b19d44ebb00cbfae1c36",
+      "environment": {
+        "node": "v26.8.2",
+        "platform": "darwin",
+        "arch": "arm64",
+        "verifier": "cbdddbf25e5ed5f3406b93881ae54f64d11a8c54f0bfe177d19d9d9946a6a971",
+        "variables": {}
+      },
+      "cost": null,
+      "stop_reason": null,
+      "ended_at": "2026-10-28T09:32:19.155Z"
+    },
+    {
+      "id": "46e7cb30-fbeb-4263-8ac0-c53533634558",
+      "task": "T-FACT",
+      "kind": "gate",
+      "command": "python3 -m unittest tests.test_fact_validation",
+      "timeout": 120000,
+      "authorization": null,
+      "pid": 37298,
+      "child_pid": 37419,
+      "started_at": "2026-10-28T09:34:07.825Z",
+      "status": "passed",
+      "before_hash": "df923cbd36f45845fc32a7e1e7e1e482977b3175df6b131af40df89d0d940bab",
+      "config_hash": "e9708a55f9ab311f70c85422b0d73b7a2a667ee4c45ca178f4e52d3083e6c9fc",
+      "environment": {
+        "node": "v26.8.2",
+        "platform": "darwin",
+        "arch": "arm64",
+        "verifier": "cbdddbf25e5ed5f3406b93881ae54f64d11a8c54f0bfe177d19d9d9946a6a971",
+        "variables": {}
+      },
+      "cost": null,
+      "stop_reason": null,
+      "ended_at": "2026-10-28T09:34:08.181Z"
+    },
+    {
+      "id": "46a943bb-27ef-471a-a337-a7875e0d72e3",
+      "task": "T-FACT",
+      "kind": "gate",
+      "command": "python3 -m unittest tests.test_fact_validation",
+      "timeout": 120000,
+      "authorization": null,
+      "pid": 38707,
+      "child_pid": 38924,
+      "started_at": "2026-10-28T09:40:37.113Z",
+      "status": "passed",
+      "before_hash": "df923cbd36f45845fc32a7e1e7e1e482977b3175df6b131af40df89d0d940bab",
+      "config_hash": "e9708a55f9ab311f70c85422b0d73b7a2a667ee4c45ca178f4e52d3083e6c9fc",
+      "environment": {
+        "node": "v26.8.2",
+        "platform": "darwin",
+        "arch": "arm64",
+        "verifier": "cbdddbf25e5ed5f3406b93881ae54f64d11a8c54f0bfe177d19d9d9946a6a971",
+        "variables": {}
+      },
+      "cost": null,
+      "stop_reason": null,
+      "ended_at": "2026-10-28T09:40:37.745Z"
+    },
+    {
+      "id": "bac420bf-2e2e-45ad-b8b7-93917491eb1f",
+      "task": "T-QUALITY",
+      "kind": "gate",
+      "command": "python3 -m unittest tests.test_quality_checks",
+      "timeout": 120000,
+      "authorization": null,
+      "pid": 40091,
+      "child_pid": 40236,
+      "started_at": "2026-10-28T09:42:25.809Z",
+      "status": "failed",
+      "before_hash": "328b73c71250ab877c76734b4006163f3673d3496616c73446ef3043ccf6669b",
+      "config_hash": "5cc057bf813d30f6bade58b6521e29f58e51ecb963336eb099b689bd894844f1",
+      "environment": {
+        "node": "v26.8.2",
+        "platform": "darwin",
+        "arch": "arm64",
+        "verifier": "cbdddbf25e5ed5f3406b93881ae54f64d11a8c54f0bfe177d19d9d9946a6a971",
+        "variables": {}
+      },
+      "cost": null,
+      "stop_reason": "command-failed",
+      "ended_at": "2026-10-28T09:42:26.281Z"
+    },
+    {
+      "id": "20b5d578-0f2e-4813-b413-dd194f07d168",
+      "task": "T-QUALITY",
+      "kind": "gate",
+      "command": "python3 -m unittest tests.test_quality_checks",
+      "timeout": 120000,
+      "authorization": null,
+      "pid": 40581,
+      "child_pid": 40726,
+      "started_at": "2026-10-28T09:42:36.030Z",
+      "status": "passed",
+      "before_hash": "b53355a62547451bd6db365f93aeefb1e5d9bd6469d2ff77bdf4502dd27bb4ef",
+      "config_hash": "5cc057bf813d30f6bade58b6521e29f58e51ecb963336eb099b689bd894844f1",
+      "environment": {
+        "node": "v26.8.2",
+        "platform": "darwin",
+        "arch": "arm64",
+        "verifier": "cbdddbf25e5ed5f3406b93881ae54f64d11a8c54f0bfe177d19d9d9946a6a971",
+        "variables": {}
+      },
+      "cost": null,
+      "stop_reason": null,
+      "ended_at": "2026-10-28T09:42:36.437Z"
+    },
+    {
+      "id": "ed1f1752-a3b2-42a1-8f74-d90fa7846f06",
+      "task": "T-REVIEW",
+      "kind": "gate",
+      "command": "python3 -m unittest tests.test_review_export",
+      "timeout": 120000,
+      "authorization": null,
+      "pid": 42083,
+      "child_pid": 42252,
+      "started_at": "2026-10-28T09:47:48.213Z",
+      "status": "passed",
+      "before_hash": "f03e51cdfeb8b63159a2170517cd3a3b83ab4d4ddd12133b60f98033345924c6",
+      "config_hash": "91f89b4bc01a60f58fac2cab4ae55cb0e9c2535d4b512b349bc81362e36042f7",
+      "environment": {
+        "node": "v26.8.2",
+        "platform": "darwin",
+        "arch": "arm64",
+        "verifier": "cbdddbf25e5ed5f3406b93881ae54f64d11a8c54f0bfe177d19d9d9946a6a971",
+        "variables": {}
+      },
+      "cost": null,
+      "stop_reason": null,
+      "ended_at": "2026-10-28T09:47:48.748Z"
+    },
+    {
+      "id": "3cee067e-7b22-4240-870d-75907d403185",
+      "task": "T-SPLIT",
+      "kind": "gate",
+      "command": "python3 -m unittest tests.test_split_validation",
+      "timeout": 120000,
+      "authorization": null,
+      "pid": 49614,
+      "child_pid": 49807,
+      "started_at": "2026-10-28T17:24:10.556Z",
+      "status": "passed",
+      "before_hash": "b18f6f442f08c22db9185c7b8d9b91abec4b6d33576907a47b3ce90c7c5b039a",
+      "config_hash": "95d7e2b2a3f34b0d2a5113b524b44b3478714df476218e85291174fedc21ae9a",
+      "environment": {
+        "node": "v26.8.2",
+        "platform": "darwin",
+        "arch": "arm64",
+        "verifier": "cbdddbf25e5ed5f3406b93881ae54f64d11a8c54f0bfe177d19d9d9946a6a971",
+        "variables": {}
+      },
+      "cost": null,
+      "stop_reason": null,
+      "ended_at": "2026-10-28T17:24:11.234Z"
+    },
+    {
+      "id": "9339e61b-eff5-4f36-afb6-e58813f7b777",
+      "task": "T-EXPORT",
+      "kind": "gate",
+      "command": "python3 -m unittest tests.test_export",
+      "timeout": 120000,
+      "authorization": null,
+      "pid": 51433,
+      "child_pid": 51650,
+      "started_at": "2026-10-28T17:28:45.055Z",
+      "status": "passed",
+      "before_hash": "6d78b0bdc51f7b750fdde4d4c9e52149c52489d9238a9a526c84e6b664bab13b",
+      "config_hash": "d9304e6134fe9426c8b46da0c5acb4ebcae7b5c5a9dd3bbd2af1a3d9eebf2ec2",
+      "environment": {
+        "node": "v26.8.2",
+        "platform": "darwin",
+        "arch": "arm64",
+        "verifier": "cbdddbf25e5ed5f3406b93881ae54f64d11a8c54f0bfe177d19d9d9946a6a971",
+        "variables": {}
+      },
+      "cost": null,
+      "stop_reason": null,
+      "ended_at": "2026-10-28T17:28:45.806Z"
+    },
+    {
+      "id": "c58d6074-99df-426b-9bb0-f825e883f21f",
+      "task": "T-REEXPORT",
+      "kind": "gate",
+      "command": "python3 -m unittest tests.test_split_validation tests.test_export",
+      "timeout": 120000,
+      "authorization": null,
+      "pid": 58929,
+      "child_pid": 59170,
+      "started_at": "2026-10-28T17:42:34.416Z",
+      "status": "passed",
+      "before_hash": "dcd15bcf19901f734c3ffb19c5b6b1f611665f3858f368281b0dd5be19d42eec",
+      "config_hash": "7e229afc8c6fb365168e9c23016e0a738fc35bd97fda6776fd3a7d9ff6c08710",
+      "environment": {
+        "node": "v26.8.2",
+        "platform": "darwin",
+        "arch": "arm64",
+        "verifier": "cbdddbf25e5ed5f3406b93881ae54f64d11a8c54f0bfe177d19d9d9946a6a971",
+        "variables": {}
+      },
+      "cost": null,
+      "stop_reason": null,
+      "ended_at": "2026-10-28T17:42:35.274Z"
+    },
+    {
+      "id": "a104e615-ab4d-410a-96e7-7e56e91351b0",
+      "task": "T-REEXPORT",
+      "kind": "gate",
+      "command": "python3 -m unittest tests.test_split_validation tests.test_export",
+      "timeout": 120000,
+      "authorization": null,
+      "pid": 60127,
+      "child_pid": 60416,
+      "started_at": "2026-10-28T17:45:22.808Z",
+      "status": "passed",
+      "before_hash": "6f33366e167524b145499882c83c13ec18924cccf3dafc6b61a1f2dad11087fa",
+      "config_hash": "7e229afc8c6fb365168e9c23016e0a738fc35bd97fda6776fd3a7d9ff6c08710",
+      "environment": {
+        "node": "v26.8.2",
+        "platform": "darwin",
+        "arch": "arm64",
+        "verifier": "cbdddbf25e5ed5f3406b93881ae54f64d11a8c54f0bfe177d19d9d9946a6a971",
+        "variables": {}
+      },
+      "cost": null,
+      "stop_reason": null,
+      "ended_at": "2026-10-28T17:45:23.897Z"
+    },
+    {
+      "id": "b786229f-61c5-4fe7-bf86-608cfad1ef86",
+      "task": "T-REEXPORT",
+      "kind": "gate",
+      "command": "python3 -m unittest tests.test_split_validation tests.test_export",
+      "timeout": 120000,
+      "authorization": null,
+      "pid": 61446,
+      "child_pid": 61785,
+      "started_at": "2026-10-28T17:45:38.569Z",
+      "status": "passed",
+      "before_hash": "dcd15bcf19901f734c3ffb19c5b6b1f611665f3858f368281b0dd5be19d42eec",
+      "config_hash": "7e229afc8c6fb365168e9c23016e0a738fc35bd97fda6776fd3a7d9ff6c08710",
+      "environment": {
+        "node": "v26.8.2",
+        "platform": "darwin",
+        "arch": "arm64",
+        "verifier": "cbdddbf25e5ed5f3406b93881ae54f64d11a8c54f0bfe177d19d9d9946a6a971",
+        "variables": {}
+      },
+      "cost": null,
+      "stop_reason": null,
+      "ended_at": "2026-10-28T17:45:39.769Z"
+    }
+  ],
+  "authorizations": [],
+  "experiments": [],
+  "incidents": [],
+  "discovery": null,
+  "checkpoint": {
+    "at": "2026-10-28T17:57:44.308Z",
+    "revision": {
+      "commit": null,
+      "dirty": null,
+      "source_hash": "3d33b16b5288ea4bec2abe0d306138a7bee1fe83c3acc4f1e3399885a2cc1897"
+    },
+    "active_task": null,
+    "next_action": "Review completed work and choose the next bounded outcome."
+  },
+  "legacy": null
+}

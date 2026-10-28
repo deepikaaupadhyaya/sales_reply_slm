@@ -1,0 +1,30 @@
+{
+  "task": "T-SPLIT",
+  "gate": "tests",
+  "kind": "command",
+  "attempt": "3cee067e-7b22-4240-870d-75907d403185",
+  "command": "python3 -m unittest tests.test_split_validation",
+  "started_at": "2026-10-28T17:24:10.556Z",
+  "observed_at": "2026-10-28T17:24:11.234Z",
+  "exit_code": 0,
+  "signal": null,
+  "stdout": "",
+  "stderr": "....\n----------------------------------------------------------------------\nRan 4 tests in 0.028s\n\nOK\n",
+  "failure": null,
+  "receipt": null,
+  "revision": {
+    "commit": null,
+    "dirty": null
+  },
+  "source_hash": "b18f6f442f08c22db9185c7b8d9b91abec4b6d33576907a47b3ce90c7c5b039a",
+  "before_hash": "b18f6f442f08c22db9185c7b8d9b91abec4b6d33576907a47b3ce90c7c5b039a",
+  "config_hash": "95d7e2b2a3f34b0d2a5113b524b44b3478714df476218e85291174fedc21ae9a",
+  "environment": {
+    "node": "v26.8.2",
+    "platform": "darwin",
+    "arch": "arm64",
+    "verifier": "cbdddbf25e5ed5f3406b93881ae54f64d11a8c54f0bfe177d19d9d9946a6a971",
+    "variables": {}
+  },
+  "hash": "5e9357acaffe0869299b641163eef2f33731b311e030222442c3ed79f39edf8a"
+}

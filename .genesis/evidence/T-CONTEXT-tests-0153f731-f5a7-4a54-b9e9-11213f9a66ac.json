@@ -1,0 +1,30 @@
+{
+  "task": "T-CONTEXT",
+  "gate": "tests",
+  "kind": "command",
+  "attempt": "0153f731-f5a7-4a54-b9e9-11213f9a66ac",
+  "command": "python3 -m unittest tests.test_context_validation",
+  "started_at": "2026-10-28T09:32:18.705Z",
+  "observed_at": "2026-10-28T09:32:19.155Z",
+  "exit_code": 0,
+  "signal": null,
+  "stdout": "",
+  "stderr": "...\n----------------------------------------------------------------------\nRan 3 tests in 0.002s\n\nOK\n",
+  "failure": null,
+  "receipt": null,
+  "revision": {
+    "commit": null,
+    "dirty": null
+  },
+  "source_hash": "6c3f8fdb851720a250c961165eb331657e749ed6052b9f019aa3724930975261",
+  "before_hash": "6c3f8fdb851720a250c961165eb331657e749ed6052b9f019aa3724930975261",
+  "config_hash": "c3965cfc02a43477c64cff9e7c6f1f5b80cea118e9b5b19d44ebb00cbfae1c36",
+  "environment": {
+    "node": "v26.8.2",
+    "platform": "darwin",
+    "arch": "arm64",
+    "verifier": "cbdddbf25e5ed5f3406b93881ae54f64d11a8c54f0bfe177d19d9d9946a6a971",
+    "variables": {}
+  },
+  "hash": "c02dea15f56799d2e2fdc1b22ee638041d20e891b9ea96f879f6979ebaaafa01"
+}

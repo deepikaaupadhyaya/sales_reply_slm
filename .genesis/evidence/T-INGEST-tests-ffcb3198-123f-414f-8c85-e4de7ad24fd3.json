@@ -1,0 +1,30 @@
+{
+  "task": "T-INGEST",
+  "gate": "tests",
+  "kind": "command",
+  "attempt": "ffcb3198-123f-414f-8c85-e4de7ad24fd3",
+  "command": "python3 -m unittest tests.test_ingestion",
+  "started_at": "2026-10-28T09:27:52.639Z",
+  "observed_at": "2026-10-28T09:27:52.859Z",
+  "exit_code": 0,
+  "signal": null,
+  "stdout": "",
+  "stderr": ".\n----------------------------------------------------------------------\nRan 1 test in 0.007s\n\nOK\n",
+  "failure": null,
+  "receipt": null,
+  "revision": {
+    "commit": null,
+    "dirty": null
+  },
+  "source_hash": "797d2043ed8e3fbb155ff8ccc5e8228a2b873f8bf90e335c1e8b764fb2e9023c",
+  "before_hash": "797d2043ed8e3fbb155ff8ccc5e8228a2b873f8bf90e335c1e8b764fb2e9023c",
+  "config_hash": "81cb84cd4c08a9862756c34b5a00dbd85b7af071c848d0a224b0680dc4a665cd",
+  "environment": {
+    "node": "v26.8.2",
+    "platform": "darwin",
+    "arch": "arm64",
+    "verifier": "cbdddbf25e5ed5f3406b93881ae54f64d11a8c54f0bfe177d19d9d9946a6a971",
+    "variables": {}
+  },
+  "hash": "e4f11899ccebda9475a28abbd825fb68c54f973039e7c029405186a2c16ed961"
+}

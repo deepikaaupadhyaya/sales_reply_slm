@@ -1,0 +1,30 @@
+{
+  "task": "T-NORMALIZE",
+  "gate": "tests",
+  "kind": "command",
+  "attempt": "a5fa59f0-b850-424d-8f7b-77eb4b3fb684",
+  "command": "python3 -m unittest tests.test_normalization",
+  "started_at": "2026-10-28T09:31:24.824Z",
+  "observed_at": "2026-10-28T09:31:25.066Z",
+  "exit_code": 0,
+  "signal": null,
+  "stdout": "",
+  "stderr": "...\n----------------------------------------------------------------------\nRan 3 tests in 0.003s\n\nOK\n",
+  "failure": null,
+  "receipt": null,
+  "revision": {
+    "commit": null,
+    "dirty": null
+  },
+  "source_hash": "6536647900124e3a1ce73dd8411080a3b8f5d8d4c81b725a3c95914a9056cc42",
+  "before_hash": "6536647900124e3a1ce73dd8411080a3b8f5d8d4c81b725a3c95914a9056cc42",
+  "config_hash": "af1d6f908abb3fad10a783f69a7a90180e6f324459974c2ca323027aec42dbbd",
+  "environment": {
+    "node": "v26.8.2",
+    "platform": "darwin",
+    "arch": "arm64",
+    "verifier": "cbdddbf25e5ed5f3406b93881ae54f64d11a8c54f0bfe177d19d9d9946a6a971",
+    "variables": {}
+  },
+  "hash": "1c148b44d4671a0d64534cb1891fd79513a29d065e606834b3804e82ac155660"
+}

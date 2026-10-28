@@ -1,0 +1,62 @@
+{
+  "input_records": 82,
+  "golden_records": 80,
+  "excluded_records": 2,
+  "per_split": {
+    "train": {
+      "records": 62,
+      "threads": 22,
+      "labels": {
+        "correct": 53,
+        "duplicate": 1,
+        "factual_error": 4,
+        "irrelevant": 1,
+        "policy_violation": 3
+      }
+    },
+    "validation": {
+      "records": 8,
+      "threads": 3,
+      "labels": {
+        "correct": 8
+      }
+    },
+    "test": {
+      "records": 10,
+      "threads": 4,
+      "labels": {
+        "correct": 7,
+        "factual_error": 2,
+        "policy_violation": 1
+      }
+    }
+  },
+  "corrections_provided": 12,
+  "reviewer_changed_proposed_label": 4,
+  "source_checksums": [
+    "candidates-readable.json:a622882704190d211d14a2c0ab132c66c8d94bdf0a151ad88f91de62ce8e810a",
+    "inventory_fixture:fixture"
+  ],
+  "checks": {
+    "thread_leakage": "none",
+    "every_golden_record_reviewed": true
+  },
+  "excluded": [
+    {
+      "decision_id": "dec_ab673cd36e7c",
+      "split": "train",
+      "label": "needs_review",
+      "reasons": [
+        "review: reviewer marked needs_review"
+      ]
+    },
+    {
+      "decision_id": "dec_32bd7f0ab708",
+      "split": "train",
+      "label": "needs_review",
+      "reasons": [
+        "review: reviewer marked needs_review"
+      ]
+    }
+  ]
+}

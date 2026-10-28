@@ -1,0 +1,30 @@
+{
+  "task": "T-REEXPORT",
+  "gate": "tests",
+  "kind": "command",
+  "attempt": "b786229f-61c5-4fe7-bf86-608cfad1ef86",
+  "command": "python3 -m unittest tests.test_split_validation tests.test_export",
+  "started_at": "2026-10-28T17:45:38.569Z",
+  "observed_at": "2026-10-28T17:45:39.769Z",
+  "exit_code": 0,
+  "signal": null,
+  "stdout": "",
+  "stderr": "..........\n----------------------------------------------------------------------\nRan 10 tests in 0.061s\n\nOK\n",
+  "failure": null,
+  "receipt": null,
+  "revision": {
+    "commit": null,
+    "dirty": null
+  },
+  "source_hash": "dcd15bcf19901f734c3ffb19c5b6b1f611665f3858f368281b0dd5be19d42eec",
+  "before_hash": "dcd15bcf19901f734c3ffb19c5b6b1f611665f3858f368281b0dd5be19d42eec",
+  "config_hash": "7e229afc8c6fb365168e9c23016e0a738fc35bd97fda6776fd3a7d9ff6c08710",
+  "environment": {
+    "node": "v26.8.2",
+    "platform": "darwin",
+    "arch": "arm64",
+    "verifier": "cbdddbf25e5ed5f3406b93881ae54f64d11a8c54f0bfe177d19d9d9946a6a971",
+    "variables": {}
+  },
+  "hash": "6f913a45a8206ff0eb3b7dcbbdb6721bf4cfad4e050e785069b9bb5f3cc98230"
+}

@@ -1,0 +1,30 @@
+{
+  "task": "T-QUALITY",
+  "gate": "tests",
+  "kind": "command",
+  "attempt": "bac420bf-2e2e-45ad-b8b7-93917491eb1f",
+  "command": "python3 -m unittest tests.test_quality_checks",
+  "started_at": "2026-10-28T09:42:25.809Z",
+  "observed_at": "2026-10-28T09:42:26.281Z",
+  "exit_code": 1,
+  "signal": null,
+  "stdout": "",
+  "stderr": ".F..\n======================================================================\nFAIL: test_human_replies_and_good_answers_pass (tests.test_quality_checks.QualityTests.test_human_replies_and_good_answers_pass)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/Users/deepika/Desktop/aisprint/1ai/portfolio/sales_reply_check_slm/tests/test_quality_checks.py\", line 48, in test_human_replies_and_good_answers_pass\n    self.assertEqual(self.out[\"dec_6e6c4e1dd069\"][\"_quality\"], \"pass\")  # on-topic answer, synonyms only\n    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: 'flagged' != 'pass'\n- flagged\n+ pass\n\n\n----------------------------------------------------------------------\nRan 4 tests in 0.026s\n\nFAILED (failures=1)\n",
+  "failure": "command-failed",
+  "receipt": null,
+  "revision": {
+    "commit": null,
+    "dirty": null
+  },
+  "source_hash": "328b73c71250ab877c76734b4006163f3673d3496616c73446ef3043ccf6669b",
+  "before_hash": "328b73c71250ab877c76734b4006163f3673d3496616c73446ef3043ccf6669b",
+  "config_hash": "5cc057bf813d30f6bade58b6521e29f58e51ecb963336eb099b689bd894844f1",
+  "environment": {
+    "node": "v26.8.2",
+    "platform": "darwin",
+    "arch": "arm64",
+    "verifier": "cbdddbf25e5ed5f3406b93881ae54f64d11a8c54f0bfe177d19d9d9946a6a971",
+    "variables": {}
+  },
+  "hash": "a457a1d87b65ab25cd8da4662ce28f3cde3e402e346deaf01cbd3b6e1585cfb0"
+}

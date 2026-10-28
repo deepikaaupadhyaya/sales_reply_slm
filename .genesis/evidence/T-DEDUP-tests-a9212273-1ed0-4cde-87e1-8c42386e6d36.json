@@ -1,0 +1,30 @@
+{
+  "task": "T-DEDUP",
+  "gate": "tests",
+  "kind": "command",
+  "attempt": "a9212273-1ed0-4cde-87e1-8c42386e6d36",
+  "command": "python3 -m unittest tests.test_deduplication",
+  "started_at": "2026-10-28T09:31:52.920Z",
+  "observed_at": "2026-10-28T09:31:53.222Z",
+  "exit_code": 0,
+  "signal": null,
+  "stdout": "",
+  "stderr": "..\n----------------------------------------------------------------------\nRan 2 tests in 0.002s\n\nOK\n",
+  "failure": null,
+  "receipt": null,
+  "revision": {
+    "commit": null,
+    "dirty": null
+  },
+  "source_hash": "6332a393174bb72da39b26d4f019ab9919127f7cc3948a7682f45f493420185c",
+  "before_hash": "6332a393174bb72da39b26d4f019ab9919127f7cc3948a7682f45f493420185c",
+  "config_hash": "b803d76721ef3700e740f51f8979b24db619c7334a3059505f8bf5915a8e9c01",
+  "environment": {
+    "node": "v26.8.2",
+    "platform": "darwin",
+    "arch": "arm64",
+    "verifier": "cbdddbf25e5ed5f3406b93881ae54f64d11a8c54f0bfe177d19d9d9946a6a971",
+    "variables": {}
+  },
+  "hash": "9bbd8bf5a2dd2a8916df8c06d0502dcf911f246d5403676112d94a8ac72478bf"
+}

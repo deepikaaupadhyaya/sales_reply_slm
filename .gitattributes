@@ -1,0 +1,2 @@
+# Keep reviewed CSVs byte-identical (CRLF from the review export)
+*.csv -text

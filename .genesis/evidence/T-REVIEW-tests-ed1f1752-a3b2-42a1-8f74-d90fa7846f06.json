@@ -1,0 +1,30 @@
+{
+  "task": "T-REVIEW",
+  "gate": "tests",
+  "kind": "command",
+  "attempt": "ed1f1752-a3b2-42a1-8f74-d90fa7846f06",
+  "command": "python3 -m unittest tests.test_review_export",
+  "started_at": "2026-10-28T09:47:48.213Z",
+  "observed_at": "2026-10-28T09:47:48.748Z",
+  "exit_code": 0,
+  "signal": null,
+  "stdout": "",
+  "stderr": ".....\n----------------------------------------------------------------------\nRan 5 tests in 0.050s\n\nOK\n",
+  "failure": null,
+  "receipt": null,
+  "revision": {
+    "commit": null,
+    "dirty": null
+  },
+  "source_hash": "f03e51cdfeb8b63159a2170517cd3a3b83ab4d4ddd12133b60f98033345924c6",
+  "before_hash": "f03e51cdfeb8b63159a2170517cd3a3b83ab4d4ddd12133b60f98033345924c6",
+  "config_hash": "91f89b4bc01a60f58fac2cab4ae55cb0e9c2535d4b512b349bc81362e36042f7",
+  "environment": {
+    "node": "v26.8.2",
+    "platform": "darwin",
+    "arch": "arm64",
+    "verifier": "cbdddbf25e5ed5f3406b93881ae54f64d11a8c54f0bfe177d19d9d9946a6a971",
+    "variables": {}
+  },
+  "hash": "6ace92113b2efbb03adac457882e9211330c57f365c0b0a6228510205f479edc"
+}

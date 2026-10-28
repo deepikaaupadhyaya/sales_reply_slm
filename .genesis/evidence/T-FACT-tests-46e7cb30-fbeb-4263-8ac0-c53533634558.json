@@ -1,0 +1,30 @@
+{
+  "task": "T-FACT",
+  "gate": "tests",
+  "kind": "command",
+  "attempt": "46e7cb30-fbeb-4263-8ac0-c53533634558",
+  "command": "python3 -m unittest tests.test_fact_validation",
+  "started_at": "2026-10-28T09:34:07.825Z",
+  "observed_at": "2026-10-28T09:34:08.181Z",
+  "exit_code": 0,
+  "signal": null,
+  "stdout": "",
+  "stderr": ".....\n----------------------------------------------------------------------\nRan 5 tests in 0.026s\n\nOK\n",
+  "failure": null,
+  "receipt": null,
+  "revision": {
+    "commit": null,
+    "dirty": null
+  },
+  "source_hash": "df923cbd36f45845fc32a7e1e7e1e482977b3175df6b131af40df89d0d940bab",
+  "before_hash": "df923cbd36f45845fc32a7e1e7e1e482977b3175df6b131af40df89d0d940bab",
+  "config_hash": "e9708a55f9ab311f70c85422b0d73b7a2a667ee4c45ca178f4e52d3083e6c9fc",
+  "environment": {
+    "node": "v26.8.2",
+    "platform": "darwin",
+    "arch": "arm64",
+    "verifier": "cbdddbf25e5ed5f3406b93881ae54f64d11a8c54f0bfe177d19d9d9946a6a971",
+    "variables": {}
+  },
+  "hash": "565ab016ea8f3ecfef923045a41b4f88c8b21ffe619aa3823e91193f5e565096"
+}

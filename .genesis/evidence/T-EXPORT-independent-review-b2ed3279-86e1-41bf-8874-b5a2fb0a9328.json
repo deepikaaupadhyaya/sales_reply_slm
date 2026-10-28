@@ -1,0 +1,13 @@
+{
+  "task": "T-EXPORT",
+  "gate": "independent-review",
+  "kind": "review",
+  "attempt": "b2ed3279-86e1-41bf-8874-b5a2fb0a9328",
+  "human": "Deepika",
+  "reason": "export golden dataset",
+  "observed_at": "2026-10-28T17:30:31.158Z",
+  "source_hash": "6d78b0bdc51f7b750fdde4d4c9e52149c52489d9238a9a526c84e6b664bab13b",
+  "config_hash": "d9304e6134fe9426c8b46da0c5acb4ebcae7b5c5a9dd3bbd2af1a3d9eebf2ec2",
+  "reviewed_proofs": "53d8d8d268a45fdbfadd7b335fcdade233011623a9a3cf349fea9fa1231aa31a",
+  "hash": "da8a1efe12b21ae97be600368db12332f825e8b1efcf4e69cf114d71930b35ca"
+}

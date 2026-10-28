@@ -1,0 +1,30 @@
+{
+  "task": "T-SCHEMA",
+  "gate": "tests",
+  "kind": "command",
+  "attempt": "432aeace-1c05-40f1-a9b5-4b8f7dca0881",
+  "command": "python3 -m unittest tests.test_schema_validation",
+  "started_at": "2026-10-28T09:31:01.503Z",
+  "observed_at": "2026-10-28T09:31:01.746Z",
+  "exit_code": 0,
+  "signal": null,
+  "stdout": "",
+  "stderr": "..\n----------------------------------------------------------------------\nRan 2 tests in 0.002s\n\nOK\n",
+  "failure": null,
+  "receipt": null,
+  "revision": {
+    "commit": null,
+    "dirty": null
+  },
+  "source_hash": "08b0bd15de259d66caec031f91eba347f5f82860f42da052cb89e71bc8ec5298",
+  "before_hash": "08b0bd15de259d66caec031f91eba347f5f82860f42da052cb89e71bc8ec5298",
+  "config_hash": "2284e9110db4f4c5ec6b507508ef95a575014b217f528e841d3c6c8cb1c02aac",
+  "environment": {
+    "node": "v26.8.2",
+    "platform": "darwin",
+    "arch": "arm64",
+    "verifier": "cbdddbf25e5ed5f3406b93881ae54f64d11a8c54f0bfe177d19d9d9946a6a971",
+    "variables": {}
+  },
+  "hash": "c44b7280dcaeeab6bf72fce6e278b8b3dd39ef3f3d8a8bc304fc1fffd623c9f1"
+}

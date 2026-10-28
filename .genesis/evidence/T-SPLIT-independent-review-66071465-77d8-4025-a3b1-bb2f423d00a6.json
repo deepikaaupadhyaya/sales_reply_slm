@@ -1,0 +1,13 @@
+{
+  "task": "T-SPLIT",
+  "gate": "independent-review",
+  "kind": "review",
+  "attempt": "66071465-77d8-4025-a3b1-bb2f423d00a6",
+  "human": "Deepika",
+  "reason": "split approved",
+  "observed_at": "2026-10-28T17:28:06.146Z",
+  "source_hash": "b18f6f442f08c22db9185c7b8d9b91abec4b6d33576907a47b3ce90c7c5b039a",
+  "config_hash": "95d7e2b2a3f34b0d2a5113b524b44b3478714df476218e85291174fedc21ae9a",
+  "reviewed_proofs": "01ee0bce09c37b5916cabbdd94366e81e7a3358b8ea5725bd3c31a70bcc59ea6",
+  "hash": "523cf7e93458bf8547d8a0485e5be6f661b58a9bad367ad8e18484e4b0f8a5dc"
+}
